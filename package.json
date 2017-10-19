@@ -8,7 +8,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^1.9.62",
-    "gatsby-link": "^1.6.21"
+    "gatsby": "^1.9.73",
+    "gatsby-link": "^1.6.22"
   }
 }
