@@ -6,7 +6,7 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-Or [view the live demo here](https://gatsby-starter-default-demo.netlify.com/).
+Or [view the live demo here](https://gatsby-starter-hello-world-demo.netlify.com/).
 
 ## Running in development
 `gatsby develop`
