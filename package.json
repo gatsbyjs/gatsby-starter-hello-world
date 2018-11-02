@@ -9,7 +9,7 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.33",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   }
