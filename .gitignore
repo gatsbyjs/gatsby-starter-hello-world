@@ -60,3 +60,7 @@ typings/
 .cache/
 public
 yarn-error.log
+
+# Yarn PnP
+.pnp/
+.pnp.js
