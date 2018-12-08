@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "gatsby": "^2.0.33",
+    "gatsby-link": "^2.0.7",
+    "gatsby-react-router-scroll": "^2.0.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1"
   }
