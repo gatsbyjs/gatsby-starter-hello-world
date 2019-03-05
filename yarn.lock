@@ -3913,10 +3913,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.4.12:
-  version "2.4.12"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.12.tgz#8d457fbbfe93ff4e1b9aa0df7fa6634b8b29b82a"
-  integrity sha512-uatXDGaEa9HpQDk1wKcchVMyUnZzxceUPPWfO4SjTzIVHkuRMiB+ZL+eT7bXufihmlLrun7r6se2HH0HCYGaVA==
+gatsby-cli@^2.4.13:
+  version "2.4.13"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.13.tgz#2338d005053d3adf60d6182700c118ba9431a57b"
+  integrity sha512-DWXGUGFKLO5mA/4LTC0hPQ9vGtWWFcsNstp6LmAIW+51yH7wKJHYWiIdbYR5URyvX64fQ2z67Kz4j2cps12Cfg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -3973,10 +3973,10 @@ gatsby-react-router-scroll@^2.0.4:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby@^2.1.20:
-  version "2.1.20"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.20.tgz#176e1d6845098d17f21a6d21790414e1d7e0b20c"
-  integrity sha512-YX08omItcGcvezjZ5DJKwwMkSQ4I+ULSxdXI+rmYNrnv6v+jHmRsXPA0zJBERRhexMdvVutSD3J/IwsvWnwuWw==
+gatsby@^2.1.22:
+  version "2.1.22"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.22.tgz#43943fbadb0b44b0eccf2de3342fa7046940e6bb"
+  integrity sha512-KHS4PSpwCn4iNbvqJvuxajTG5yaXC+d5cQ1gWjsex69tfg4duoUMiIgiicIymxY1aAsYIOA+bVPyCRd/iSISBA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -4032,7 +4032,7 @@ gatsby@^2.1.20:
     friendly-errors-webpack-plugin "^1.6.1"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.4.12"
+    gatsby-cli "^2.4.13"
     gatsby-link "^2.0.14"
     gatsby-plugin-page-creator "^2.0.8"
     gatsby-react-router-scroll "^2.0.4"
@@ -4462,10 +4462,12 @@ hoek@4.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
   integrity sha512-QLg82fGkfnJ/4iy1xZ81/9SIJiq1NGFUMGs6ParyjBZr6jW2Ufj/snDqTHixNlHdPNwN2RLVD0Pi3igeK9+JfA==
 
-hoist-non-react-statics@^2.5.0:
-  version "2.5.5"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
-  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
+hoist-non-react-statics@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
 
 homedir-polyfill@^1.0.1:
   version "1.0.3"
@@ -5468,11 +5470,6 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
-
-lodash.merge@^4.6.1:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
-  integrity sha512-AOYza4+Hf5z1/0Hztxpm2/xiPZgi/cjMqdnKTUWTBSKchJlxXXuUSxCCl8rJlf4g6yww/j6mA8nC8Hw/EZWxKQ==
 
 lodash.toarray@^4.4.0:
   version "4.4.0"
@@ -7198,21 +7195,21 @@ react-error-overlay@^3.0.0:
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
 react-hot-loader@^4.6.2:
-  version "4.7.1"
-  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.7.1.tgz#1260b939297859cff35aff61412887a92c9b4275"
-  integrity sha512-OVq9tBndJ+KJWyWbj6kAkJbRVFx3Ykx+XOlndT3zyxAQMBFFygV+AS9RQi6Z2axkPIcEkuE5K6nkpcjlzR8I9w==
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.7.2.tgz#54cd99441c2d594bdc58c90673690c245dcfcaff"
+  integrity sha512-kkvGHmvLrbg6RH7svQ28T1swM2JFsHYBRT92xz4k4ubSyPcE2i8YVPQmoKWsDk/zNNpC710M9Md10oZzugecOw==
   dependencies:
     fast-levenshtein "^2.0.6"
     global "^4.3.0"
-    hoist-non-react-statics "^2.5.0"
+    hoist-non-react-statics "^3.3.0"
     loader-utils "^1.1.0"
-    lodash.merge "^4.6.1"
+    lodash "^4.17.11"
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-is@^16.8.1:
+react-is@^16.7.0, react-is@^16.8.1:
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
   integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
