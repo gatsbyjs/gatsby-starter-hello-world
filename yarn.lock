@@ -1928,9 +1928,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000844, caniuse-lite@^1.0.30000947, caniuse-lite@^1.0.30000949:
-  version "1.0.30000950"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000950.tgz#8c559d66e332b34e919d1086cc6d29c1948856ae"
-  integrity sha512-Cs+4U9T0okW2ftBsCIHuEYXXkki7mjXmjCh4c6PzYShk04qDEr76/iC7KwhLoWoY65wcra1XOsRD+S7BptEb5A==
+  version "1.0.30000951"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000951.tgz#c7c2fd4d71080284c8677dd410368df8d83688fe"
+  integrity sha512-eRhP+nQ6YUkIcNQ6hnvdhMkdc7n3zadog0KXNRxAZTT2kHjUb1yGn71OrPhSn8MOvlX97g5CR97kGVj8fMsXWg==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -3999,10 +3999,10 @@ gatsby-react-router-scroll@^2.0.6:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.2.2.tgz#94706627fd0cc5c369fd0f2fdf6ca7ddb925522e"
-  integrity sha512-M5T+yCCKaTXiTKS/Uup2Bo0KE0imM+1vrGC8pqz9YvHS5K5l17DclwzHfP/J7B123L7JqLDiXH6YA0oCSvUzFA==
+gatsby@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.2.3.tgz#8ee215f9020c90fb96f07db1db476861159eb193"
+  integrity sha512-qGq4tqww68EHmf2sOFKuLvA6nFhlvHQ2oiwLLXBLpse+dX7lVQKKKN4XXV9GRpPbMG4CvgRF/rfqUBzawGsAQg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
