@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "apollo-client": "^2.5.1",
     "clipboard.js": "^1.0.1",
     "gatsby": "^2.1.37",
     "react": "^16.8.4",
