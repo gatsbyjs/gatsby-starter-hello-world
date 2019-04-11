@@ -16,7 +16,8 @@
     "clipboard.js": "^1.0.1",
     "gatsby": "^2.1.37",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
