@@ -15,6 +15,7 @@
   "dependencies": {
     "clipboard.js": "^1.0.1",
     "gatsby": "^2.1.37",
+    "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "uuid": "^3.3.2"
