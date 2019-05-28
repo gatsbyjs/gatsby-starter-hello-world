@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "clipboard.js": "^1.0.1",
-    "gatsby": "^2.1.37",
+    "gatsby": "https://github.com/pieh/gatsby/raw/27e7c9ff72a3230486fc8d6dcbac0cc010319e3d/packages/gatsby/gatsby-2.4.3.tgz",
     "lodash": "^4.17.11",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
