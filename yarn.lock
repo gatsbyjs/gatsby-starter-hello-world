@@ -3120,9 +3120,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.164, electron-to-chromium@^1.3.47:
-  version "1.3.164"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.164.tgz#8680b875577882c1572c42218d53fa9ba5f71d5d"
-  integrity sha512-VLlalqUeduN4+fayVtRZvGP2Hl1WrRxlwzh2XVVMJym3IFrQUS29BFQ1GP/BxOJXJI1OFCrJ5BnFEsAe8NHtOg==
+  version "1.3.165"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.165.tgz#51864c9e3c9bd9e1c020b9493fddcc0f49888e3a"
+  integrity sha512-iIS8axR524EAnvUtWUNnREnYjQrS0zUvutIKYgTVuN3MzcjrV31EuJYKw7DGOtFO9DQw+JiXeaVDPQWMskG1wQ==
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -3998,10 +3998,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gatsby-cli@^2.6.9:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.6.9.tgz#68cd3d5b29800aaf2a4e3f6d75c0da5506815b05"
-  integrity sha512-WVjcSEBTaS1Qi42+zpfK/34G+1yqsONudVAkOu+06W7N4d/fk9DyoMDJcFm1AaRMwJ/nB51UYaGMpnKloFicBA==
+gatsby-cli@^2.6.12:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.6.12.tgz#22e2e99df00a6c273061693e3b81e8637ac982bb"
+  integrity sha512-Ed1oM9ahiI32iO47QgcIw1hBLeroqVFURjrNCHebOWEVJcTS1JaslcACJWN2Hq5OUyHC42hN7bDKU6IkmGe/Uw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -4103,10 +4103,10 @@ gatsby-telemetry@^1.0.12:
     stack-utils "1.0.2"
     uuid "3.3.2"
 
-gatsby@^2.9.6:
-  version "2.9.6"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.9.6.tgz#b5f6c5bdddb36e462921e7c1180d68d293158034"
-  integrity sha512-HKVPa7x5dKKr3cXpb9aKHqLioTl4s1r2Kh8gIpLLY1DQkcE1WnzWScptWRMBCrAnZxZqnWKkpjcXNLoIFz0idw==
+gatsby@^2.9.9:
+  version "2.9.9"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.9.9.tgz#9a435ca5751b0958bc764b8eb801356158e47c0e"
+  integrity sha512-jAAMCn7NNeymwTQ2+EcpWQmwbOEjd6RiBAxc7aBvfSg3PDJUG50bCeWC9TaYC81hiHq3XSHgJLDB+02BSJmjkw==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -4164,7 +4164,7 @@ gatsby@^2.9.6:
     flat "^4.0.0"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.6.9"
+    gatsby-cli "^2.6.12"
     gatsby-graphiql-explorer "^0.1.2"
     gatsby-link "^2.1.1"
     gatsby-plugin-page-creator "^2.0.13"
@@ -9324,9 +9324,9 @@ xmlhttprequest-ssl@~1.5.4:
   integrity sha1-wodrBhaKrcQOV9l+gRkayPQ5iz4=
 
 xstate@^4.3.2:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.6.1.tgz#81d45d7e0a71358a1d8b8c80af90e3a50f98bb18"
-  integrity sha512-f4HqFkGYVN03kDgxIM3Vp4zC9yDvunN6FHhEjbusEuAqwMFkyWg0VOUKdj/K7+W5fDcDHox7OgPYYfGIGWyJ8Q==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.6.2.tgz#5122be38b659a03bce49e129feeaf8029c919dec"
+  integrity sha512-3lRM7w72lnijswRniT49v/Y0hiuhAQ5f1L7d1fhLA+jcKreebGM+7/NgFMSuzjsC1q7sC9cQ9QqTUfVzgDRFmA==
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
