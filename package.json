@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "clipboard.js": "^1.0.1",
-    "gatsby": "https://github.com/pieh/gatsby/raw/27e7c9ff72a3230486fc8d6dcbac0cc010319e3d/packages/gatsby/gatsby-2.4.3.tgz",
+    "gatsby": "^2.6.4",
     "gatsby-image": "^2.1.4",
     "gatsby-plugin-sharp": "^2.1.7-cloud-image-sharp.7",
     "gatsby-source-filesystem": "^2.0.43",
