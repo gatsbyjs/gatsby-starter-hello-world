@@ -33,7 +33,7 @@ const Image = () => (
 
 export default () => (
   <div>
-    FOooo!!!! 😊
+    Foo!!! 😊
     <div>
       <Image />
     </div>
