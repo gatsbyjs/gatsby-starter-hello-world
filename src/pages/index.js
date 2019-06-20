@@ -30,11 +30,10 @@ const Image = () => (
     render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
   />
 )
-export default Image
 
-
-export default () => <div>Suh Man!! 😊
-
-
+export default () => (
+  <div>
+    Suh Man!! 😊
     <Image />
-</div>
+  </div>
+)
