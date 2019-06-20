@@ -34,6 +34,8 @@ const Image = () => (
 export default () => (
   <div>
     Suh Man!! 😊
-    <Image />
+    <div>
+      <Image />
+    </div>
   </div>
 )
