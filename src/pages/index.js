@@ -18,7 +18,7 @@ const Image = () => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gatsby%20astronaut.png" }) {
+        placeholderImage: file(relativePath: { eq: "gatsby astronaut.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
@@ -33,7 +33,7 @@ const Image = () => (
 
 export default () => (
   <div>
-    This is some text!!
+    This is some text!!!!!
     <div style={{ maxWidth: 600 }}>
       <Image />
     </div>
