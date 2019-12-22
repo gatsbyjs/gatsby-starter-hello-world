@@ -16,7 +16,7 @@
     "clipboard.js": "^1.0.1",
     "gatsby": "^2.16.5",
     "gatsby-image": "^2.1.4",
-    "gatsby-plugin-sharp": "^2.1.7-cloud-image-sharp.7",
+    "gatsby-plugin-sharp": "2.3.8-sharp-jobs-v2.26",
     "gatsby-source-filesystem": "^2.0.43",
     "gatsby-telemetry": "^1.1.12",
     "gatsby-transformer-sharp": "^2.1.21",
