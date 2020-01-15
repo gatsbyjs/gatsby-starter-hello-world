@@ -25,6 +25,9 @@
     "react-dom": "^16.8.4",
     "uuid": "^3.3.2"
   },
+  "resolutions": {
+    "sharp": "0.22.1"
+  },
   "devDependencies": {
     "prettier": "^1.16.4"
   },
