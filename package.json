@@ -18,6 +18,7 @@
     "gatsby": "^2.19.22",
     "gatsby-image": "^2.1.4",
     "gatsby-parallel-runner": "^1.2.1",
+    "gatsby-plugin-benchmark-reporting": "^0.0.10",
     "gatsby-plugin-sharp": "^2.3.13",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-telemetry": "^1.1.12",
