@@ -25,7 +25,6 @@
     "gatsby-plugin-sharp": "^3.0.1",
     "gatsby-plugin-sitemap": "^3.0.0",
     "gatsby-source-airtable": "^2.1.1",
-    "gatsby-source-bigcommerce": "^0.3.7",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-stripe": "^3.2.2",
     "gatsby-transformer-sharp": "^3.0.0",
