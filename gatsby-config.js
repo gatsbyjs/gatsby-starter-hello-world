@@ -12,9 +12,10 @@ require("dotenv").config({
 
 module.exports = {
 	siteMetadata: {
+	siteUrl: `ttps://btrtomorrow.netlify.app`,
     title: 'The Good Trends Reorder',
     description:
-      'This site is to help customers reorder.'
+      'This site is to help customers reorder fast and successfully from THe Good Trends.'
   	},
 	plugins: [{
 		      resolve: `gatsby-source-stripe`,

@@ -16,6 +16,8 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@stripe/stripe-js": "^1.13.1",
+    "airtable": "^0.10.1",
+    "crypto": "^1.0.1",
     "gatsby": "^3.0.4",
     "gatsby-image": "^3.0.0",
     "gatsby-plugin-emotion": "^6.0.0",
@@ -28,6 +30,7 @@
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-stripe": "^3.2.2",
     "gatsby-transformer-sharp": "^3.0.0",
+    "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
