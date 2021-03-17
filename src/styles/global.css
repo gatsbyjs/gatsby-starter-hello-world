@@ -1,0 +1,107 @@
+:root {
+    --accentColor: #00755A;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: rgba(0,0,0, 0.85);
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+p, span {
+    color: rgba(0,0,0, 0.75);
+    padding: 0;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.content-container {
+    padding: 1rem;
+}
+
+.heading-first {
+    color: rgba(0,0,0, 0.85);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem 0;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.heading-third {
+    color: rgba(0,0,0, 0.85);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.text-light {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.link-with-arrow {
+    background: none;
+    border: none;
+    display: inline-block;
+    font-weight: 300;
+    margin: 2rem 0 0 0;
+}
+
+.link-with-arrow::after {
+    content: '⭢';
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.screen-reader-only {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+.required {
+    color: red;
+}
+
+#card-element {
+    border: solid 1px rgba(0,0,0, 0.85);
+    padding: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .content-container {
+        padding: 1rem 0;
+    }
+
+    .heading-first {
+        font-size: 1.67rem;
+    }
+
+    p {
+        font-size: 1.13rem;
+    }
+}

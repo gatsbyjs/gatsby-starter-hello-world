@@ -1,0 +1,97 @@
+.home__cta {
+    align-items: flex-end;
+    background: url('../images/home_cta_background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    min-height: 500px;
+    padding: 5rem;
+}
+
+.home__ctaText {
+    display: none;
+}
+
+.home__ctaButton {
+    background-color: var(--accentColor);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.home__contentGrid {
+    display: grid;
+    grid-gap: 1rem;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.home__aboutAdditional {
+    display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    .layout {
+        max-width: 1000px;
+    }
+    .home__cta {
+        align-items: flex-start;
+        background-position: center;
+        flex-direction: column;
+        padding-left: 50%;
+    }
+    .home__ctaText {
+        display: block;
+        text-transform: capitalize;
+    }
+
+    .home__ctaText p {
+        margin: 0;
+        margin-bottom: 1.5rem;
+        padding: 0;
+    }
+
+    .home__ctaText h2 {
+        color: rgba(0,0,0, 0.75);
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.25rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin: 0;
+        padding: 0;
+    }
+
+    .home__contentGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .home__about {
+        display: grid;
+        grid-gap: 2rem;
+        gap: 2rem;
+        grid-template-columns: 2fr 3fr;
+        padding: 2rem 0;
+    }
+
+    .home__aboutAdditional {
+        background-color: var(--accentColor);
+        color: white;
+        display: block;
+        padding: 1rem;
+    }
+
+    .home__aboutAdditional h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    .home__aboutAdditional p, .home__aboutAdditional a {
+        color: white;
+    }
+}

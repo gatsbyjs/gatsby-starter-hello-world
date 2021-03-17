@@ -1,0 +1,132 @@
+.layout {
+    margin: 0 auto; 
+    width: 100%;
+}
+
+.layout__cartOpen {
+    overflow-y: hidden;    
+}
+
+.layout__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.layout__headerText {
+    font-size: 1.88rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+.layout__menuButton {
+    background-color: transparent;
+    background-image: url('./images/menu.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    height: 36px;
+    margin: 0 1rem 0 0;
+    width: 36px;
+}
+
+.layout__menuButton:focus {
+    outline-color: #4b4b4b;
+    outline-style: dashed;
+    outline-width: 1px;
+}
+
+.layout__navigationMenuWrapper {
+    display: none;
+}
+
+.layout__navigationMenuWrapper.layout__navigationOpen {
+    display: block;
+}
+
+.layout__navigationMenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+.layout__navigationMenuItem {
+    border-bottom: solid 3px transparent;
+    color: rgba(0, 0, 0, 0.75);
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.layout__footer {
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.layout__footerLinks {
+    border: solid 1px #E4E4E4;
+    border-right: 0;
+    border-left: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem; 
+}
+
+.layout__footerLink {
+    color: rgba(0,0,0. 0.65);
+    padding: 0.5rem 0;
+}
+
+.layout__footerLink:hover {
+    text-decoration: underline;
+}
+
+.layout__footerSocialIcons {
+    background-color: transparent;
+    background-image: url(./images/instagram.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    height: 36px;
+    margin: 1rem auto;
+    width: 36px;
+}
+
+@media screen and (min-width: 1000px) {
+    .layout {
+        max-width: 1000px;
+    }
+    .layout__header {
+        border-bottom: solid 1px rgba(0, 0, 0, 0.55);
+        padding: 1rem 0;
+    }
+    .layout__menuButton {
+        display: none;
+    }
+    .layout__navigationMenuWrapper, .layout__navigationMenuWrapper.layout__navigationOpen {
+        display: block;
+        margin-bottom: 2rem;
+    }
+    .layout__navigationMenu {
+        display: flex;
+        padding: 0;
+    }
+    .layout__navigationMenuItem {
+        margin-right: 3rem;
+    }
+    .layout__activeLink, .layout__navigationMenuItem:hover {
+        border-color: var(--accentColor);
+        text-decoration: none;
+    }
+    .layout__headerText {
+        margin: 0;
+    }
+    .layout__footerLinks {
+        margin: 0;
+    }
+}
