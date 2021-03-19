@@ -16,6 +16,7 @@
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@emotion/react": "^11.1.5",
+    "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
     "@stripe/stripe-js": "^1.13.1",
     "airtable": "^0.10.1",
     "apollo-boost": "^0.4.9",
@@ -36,6 +37,7 @@
     "gatsby-source-airtable": "^2.1.1",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-mysql": "^2.2.3",
+    "gatsby-source-pg": "^0.2.1",
     "gatsby-source-stripe": "^3.2.2",
     "gatsby-transformer-sharp": "^3.0.0",
     "graphql": "^15.5.0",

@@ -11,6 +11,17 @@ const getAllProducts = async () => {
   return allProducts.map(({ id, fields }) => transformResponse(id, fields))
 }
 
+// Work in progress
+const getProduct = async ({ id }) => {
+  console.log({id})
+  console.log('Ok')
+  //for(var prop in id) {
+  //console.log(prop,id[prop]); }
+  const Product = await table.find(id)
+  //console.log(Product)
+  return transformResponse(Product["id"], Product["fields"])
+}
+
 const addProduct = async ({ product }) => {
   const { name, description } = product
   const createProduct = await table.create([
@@ -33,3 +44,4 @@ const transformResponse = (id, fields) => ({
 
 exports.getAllProducts = getAllProducts
 exports.addProduct = addProduct
+exports.getProduct = getProduct

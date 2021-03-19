@@ -28,7 +28,7 @@ module.exports = {
 			{
 		    resolve: `gatsby-source-airtable`,
 		    options: {
-		      apiKey: process.env.AT_API_KEY, // may instead specify via env, see below
+		      apiKey: process.env.AT_API_KEY,
 		      concurrency: 5, // default, see using markdown and attachments for more information
 		      tables: [
 		        {
@@ -47,29 +47,37 @@ module.exports = {
 		          // can leave off queryName, mapping or tableLinks if not needed
 		        }
 		      ]}},
-		      // {
-			     //  resolve: `gatsby-source-mysql`,
-			     //  options: {
-			     //    connectionDetails: {
-			     //      client: 'pg',
-			     //      host: 'good-trends-db.cyihl0iyg8xl.us-east-1.rds.amazonaws.com',
-			     //      port: 5432,
-			     //      user: 'admin',
-			     //      password: '?Welcome5',
-			     //      database: 'good_trends_db',
-			     //      //ssl  : {
-    				// 	//ca : fs.readFileSync(__dirname + '/mysql-ca.crt')
+		     //  {
+			    //   resolve: `gatsby-source-mysql`,
+			    //   options: {
+			    //     connectionDetails: {
+			    //       client: 'pg',
+			    //       host: 'good-trends-db.cyihl0iyg8xl.us-east-1.rds.amazonaws.com',
+			    //       port: 5432,
+			    //       user: 'good_trends_user',
+			    //       password: 'PuUJ4NH9Af7',
+			    //       database: 'good_trends_db',
+			    //       //ssl  : {
+    			// 		//ca : fs.readFileSync(__dirname + '/mysql-ca.crt')
 
-			     //    	},
-			     //    queries: [
-			     //      {
-			     //        statement: 'SELECT * FROM the_good_trends_app.bigcommerce_order',
-			     //        idFieldName: 'id',
-			     //        name: 'order'
-			     //      }
-			     //    ]
-			     //  }
-			    //},
+			    //     	},
+			    //     queries: [
+			    //       {
+			    //         statement: 'SELECT * FROM bigcommerce_sellerproductorder',
+			    //         idFieldName: 'Id',
+			    //         name: 'sorder'
+			    //       }
+			    //     ]
+			    //   }
+			    // },
+			  // {
+		   //    resolve: "gatsby-source-pg",
+		   //    options: {
+			  //       connectionString: "postgres://good_trends_user:PuUJ4NH9Af7@good-trends-db.cyihl0iyg8xl.us-east-1.rds.amazonaws.com:5432/good_trends_db",
+			  //       schema: "public",
+			  //       appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
+			  //     },
+			  // },
 			  // Design & speed load time
 			  'gatsby-legacy-polyfills',
 			  `gatsby-transformer-sharp`, 

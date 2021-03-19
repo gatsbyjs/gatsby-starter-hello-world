@@ -10,7 +10,7 @@ const at_base = new Airtable({
 const at_table_products = at_base('customers')
 
 exports.handler = async (event, context, callback) => {
-	const qs_val_recid='all'
+	const qs_val_recid ='all'
 	const customer_id = event.queryStringParameters.customer_id
 	var resp, sendBack
 
@@ -18,7 +18,7 @@ exports.handler = async (event, context, callback) => {
 		// https://community.airtable.com/t/variable-in-filterbyformula/2251
 		filterFormula = "( {Customer ID} = '" + customer_id + "')";
 
-		console.log('record id: ' + qs_val_recid)
+		console.log('record id: ' + customer_id)
 
 		if ( typeof qs_val_recid !== 'undefined' && qs_val_recid !== '' && qs_val_recid !== 'all' ) {
 			resp = await at_table_products.find(qs_val_recid);
@@ -30,7 +30,7 @@ exports.handler = async (event, context, callback) => {
 				})
 				.firstPage()
 		}
-
+		
 		if (typeof resp !== 'undefined') {
 			sendBack = {
 				statusCode: 200,
