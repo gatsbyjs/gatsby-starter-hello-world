@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 //import { useCartContext } from '../../../wrap-with-provider';
 //import { CartButton, Cart } from '../shopping-cart/shopping-cart';
-import * as styles from './layout.module.css';
+import * as styles from './Layout.module.css';
 
 export default function Layout({ children }) {
   return (
