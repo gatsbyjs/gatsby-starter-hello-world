@@ -1,0 +1,3 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: "Content-Type,Authorization,X-Requested-With,X-CSRF-Token"

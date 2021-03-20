@@ -11,7 +11,7 @@ require("dotenv").config({
 
 module.exports = {
 	siteMetadata: {
-	siteUrl: `ttps://btrtomorrow.netlify.app`,
+	siteUrl: `http://localhost:8888/`,
     title: 'The Good Trends Reorder',
     description:
       'This site is to help customers reorder fast and successfully from THe Good Trends.'
@@ -90,9 +90,21 @@ module.exports = {
 			      pathToConfigModule: `src/utils/typography`,
 			      },
 			    },
+			    {
+			      resolve: `gatsby-plugin-modal-routing`,
+			      options: {
+			        // A selector to set react-modal's app root to, default is `#___gatsby`
+			        // See http://reactcommunity.org/react-modal/accessibility/#app-element
+			        appElement: '#___gatsby',
+
+			        // Object of props that will be passed to the react-modal container
+			        // See http://reactcommunity.org/react-modal/#usage
+			        modalProps: { },
+			      }
+			    },
 			  // Requires for cart management
 			  '@stripe/stripe-js',
-			  'use-shopping-cart',
+			  //'use-shopping-cart',
 			  'crypto',
 			  'crypto-browserify',
 			  '@emotion/react',

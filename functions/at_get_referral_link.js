@@ -8,6 +8,7 @@ const at_base = new Airtable({
 	})
 	.base(AIRTABLE_BASE_CUSTOMER_ID)
 const at_table_products = at_base('customers')
+const HEADER = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers' : 'Content-Type,X-XSRF-TOKEN,X-CSRF-TOKEN'}
 
 exports.handler = async (event, context, callback) => {
 	const qs_val_recid='all'
@@ -34,33 +35,28 @@ exports.handler = async (event, context, callback) => {
 		if (typeof resp !== 'undefined') {
 			sendBack = {
 				statusCode: 200,
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(resp[0]['fields']['unique_link_short'])
+				headers: HEADER,
+				body: JSON.stringify({ 'link' : resp[0]['fields']['unique_link_short']})
 			}
 
 			console.log('...a bunch of good data...')
 		} else {
 			sendBack = {
 				statusCode: 204,
-				body: 'I got nada...'
+				headers: HEADER,
+				body: JSON.stringify({ 'link' : 'You do not have a referral link yet.'})
 			}
 
 			console.log(sendBack)
 		}
 
 		return sendBack
-	} catch (errObj) {
-		const errBody = {
-			'err_msg': errObj.message
-		}
-
-		console.log('Error (from catch): ');
-		console.log(errObj);
+	} catch {
 		
 		return {
-			statusCode: errObj.statusCode,
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(errBody)
+			statusCode: 200,
+			headers: HEADER,
+			body: JSON.stringify({ 'link' : 'You do not have a referral link yet.'})
 		}
 	}
 }

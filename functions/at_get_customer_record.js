@@ -34,7 +34,7 @@ exports.handler = async (event, context, callback) => {
 		if (typeof resp !== 'undefined') {
 			sendBack = {
 				statusCode: 200,
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
 				body: JSON.stringify(resp[0]['fields']['unique_link_short'])
 			}
 
