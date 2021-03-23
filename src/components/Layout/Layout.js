@@ -37,7 +37,7 @@ export default function Layout({ children, location, pageContext }) {
 
 	        <div style={{ display: `flex` }}>
 	            <Link to={`/customer/${email}`}>
-	                <img src="./images/logo.png"</img>
+	                <img src='./images/logo.png'/ >
 	            </Link>
 	        </div>
 	       	<div style={{ display: `flex`, align : 'right' }}>
