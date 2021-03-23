@@ -1,0 +1,14 @@
+.productItem img {
+    border: solid 1px #EEEEEE;
+    display: block;
+}
+
+.productItem__text {
+    color: rgba(0,0,0, 1);
+    margin: 0;
+    padding: 0;
+}
+
+.productItem__textLight {
+    color: rgba(0,0,0, 0.65);
+}

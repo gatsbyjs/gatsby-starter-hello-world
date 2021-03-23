@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import getStripe from "../../utils/stripejs"
+
 const cardStyles = {
   display: "flex",
   flexDirection: "column",
@@ -12,6 +13,7 @@ const cardStyles = {
   borderRadius: "6px",
   maxWidth: "50%px",
 }
+
 const buttonStyles = {
   display: "block",
   fontSize: "13px",
@@ -23,10 +25,12 @@ const buttonStyles = {
   borderRadius: "6px",
   letterSpacing: "1.5px",
 }
+
 const buttonDisabledStyles = {
   opacity: "0.5",
   cursor: "not-allowed",
 }
+
 const formatPrice = (amount, currency) => {
   let price = (amount / 100).toFixed(2)
   let numberFormat = new Intl.NumberFormat(["en-US"], {
@@ -38,6 +42,7 @@ const formatPrice = (amount, currency) => {
 }
 const ProductCard = ({ product }) => {
   const [loading, setLoading] = useState(false)
+  
   const handleSubmit = async event => {
     event.preventDefault()
     setLoading(true)
@@ -54,6 +59,7 @@ const ProductCard = ({ product }) => {
       setLoading(false)
     }
   }
+  
   return (
     <div style={cardStyles}>
       <form onSubmit={handleSubmit}>

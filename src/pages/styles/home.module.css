@@ -95,3 +95,57 @@
         color: white;
     }
 }
+
+.home__reactTabs {
+  margin: auto;
+}
+
+.home__reactTabList {
+  margin: auto;
+}
+
+
+.home__reactTab {
+  width:50%;
+  text-align:center;
+  display:inline-flex;
+  text-align:center;
+  color: grey !important;
+  border-bottom: 5px solid grey;
+  padding: "1rem";
+  marginBottom: "1rem";
+
+}
+
+.home__reactTab__selected {
+  @extend .home__reactTabs;
+  font-weight: bold;
+  color: black;  
+  border-bottom: 5px solid black;
+}
+
+
+.home__header_sub_menu {
+  width:100%;
+  text-align:center;
+  display:inline-flex;
+  text-align:center;
+  color: grey !important;
+  border-bottom: 5px solid black;
+  margin: 0px 0px 10px 0px; 
+}
+
+.brand_summary_container {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.brand_left_container {
+
+}
+
+.brand_right_container {
+
+}
+

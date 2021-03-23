@@ -1,0 +1,62 @@
+$block: '.quantity-input';
+$border: 0 solid #dbdbdb;
+$border-radius: 3px;
+$color--primary: #f3f3f3;
+$modifier--text-color: #888;
+
+
+#{$block} {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  
+  &:focus {
+    background: red;
+  }
+}
+
+#{$block}__modifier,
+#{$block}__screen {
+  user-select: none;
+  outline: none;
+}
+
+#{$block}__modifier {
+  padding: .7rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  
+  background: $color--primary;
+  color: $modifier--text-color;
+  border: $border;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(#fff, .6);
+  
+  cursor: pointer;
+  
+  &:hover {
+    background: darken($color--primary, 10%);
+    color: darken($modifier--text-color, 20%)
+  }
+  
+  &--left {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+  
+  &--right {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+}
+
+#{$block}__screen {
+  width: 4rem;
+  padding: .7rem;
+  font-size: 1.5rem;
+  
+  border: 0;
+  border-top: $border;
+  border-bottom: $border;
+  text-align: center;
+}

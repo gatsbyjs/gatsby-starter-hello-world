@@ -1,10 +1,10 @@
 
 // Css import of global styles
 import "./src/styles/global.css"
-// Stripe
-import { loadStripe } from '@stripe/stripe-js'
-//import { CartProvider } from 'use-shopping-cart'
 import React from 'react';
+// Stripe
+//import { loadStripe } from '@stripe/stripe-js'
+import { CartProvider } from 'use-shopping-cart'
 import getStripe from "./src//utils/stripejs"
 // Fauna DB
 import ApolloClient from 'apollo-boost';
@@ -15,7 +15,8 @@ import { graphql } from "gatsby"
 // Initiate Stripe
 const stripePromise = getStripe()
 
-export const data = graphql`
+// Initializes the Apollo Client
+export const query = graphql`
   query PageQuery {
     site {
       siteMetadata {
@@ -24,11 +25,9 @@ export const data = graphql`
     }
   }
 `
-console.log(data.site.siteMetadata.siteURL+"/.netlify/functions/graphql"
-	)
 // Initiate Apollo
 const client = new ApolloClient({
-  uri: data.site.siteMetadata.siteURL+"/.netlify/functions/graphql",
+  uri: "https://tgtreorder.netlify.app/.netlify/functions/graphql",
   request: operation => {
     operation.setContext({
       headers: {
@@ -42,11 +41,11 @@ const client = new ApolloClient({
 
 export const wrapRootElement = ({ element }) => {
   return (
-//    <CartProvider mode="checkout-session" stripe={stripePromise} currency="USD">
+    <CartProvider mode="checkout-session" stripe={stripePromise} currency="USD">
 		<ApolloProvider client={client}>		
 		{element}
 		</ApolloProvider>
-// 	</CartProvider>
+ 	</CartProvider>
   	);
 }
 

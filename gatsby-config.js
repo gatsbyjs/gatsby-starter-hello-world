@@ -28,22 +28,37 @@ module.exports = {
 			{
 		    resolve: `gatsby-source-airtable`,
 		    options: {
-		      apiKey: process.env.AT_API_KEY,
+		      apiKey: process.env.AIRTABLE_API_KEY,
 		      concurrency: 5, // default, see using markdown and attachments for more information
 		      tables: [
 		        {
-		          baseId: `app1K0wx2fQSngaRX`,
+		          baseId: process.env.AIRTABLE_BASE_MERCHANDISING_ID,
 		          tableName: `product_catalog`,
 		          // can leave off queryName, mapping or tableLinks if not needed
 		        },
 		        {
-		          baseId: `appHryZ3YKQk6tYCR`,
+		          baseId: process.env.AIRTABLE_BASE_CUSTOMER_ID,
 		          tableName: `customers`,
 		          // can leave off queryName, mapping or tableLinks if not needed
 		        },
 		        {
-		          baseId: `app1K0wx2fQSngaRX`,
+		          baseId: process.env.AIRTABLE_BASE_MERCHANDISING_ID,
 		          tableName: `brand_catalog`,
+		          // can leave off queryName, mapping or tableLinks if not needed
+		        },
+		        {
+		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
+		          tableName: `reorders`,
+		          // can leave off queryName, mapping or tableLinks if not needed
+		        },
+		        {
+		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
+		          tableName: `ordered_brands`,
+		          // can leave off queryName, mapping or tableLinks if not needed
+		        },
+		        {
+		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
+		          tableName: `ordered_products`,
 		          // can leave off queryName, mapping or tableLinks if not needed
 		        }
 		      ]}},
@@ -79,6 +94,7 @@ module.exports = {
 			  //     },
 			  // },
 			  // Design & speed load time
+			  'gatsby-plugin-sass',
 			  'gatsby-legacy-polyfills',
 			  `gatsby-transformer-sharp`, 
 			  `gatsby-plugin-sharp`,
@@ -90,21 +106,21 @@ module.exports = {
 			      pathToConfigModule: `src/utils/typography`,
 			      },
 			    },
-			    {
-			      resolve: `gatsby-plugin-modal-routing`,
-			      options: {
-			        // A selector to set react-modal's app root to, default is `#___gatsby`
-			        // See http://reactcommunity.org/react-modal/accessibility/#app-element
-			        appElement: '#___gatsby',
+			    // {
+			    //   resolve: `gatsby-plugin-modal-routing`,
+			    //   options: {
+			    //     // A selector to set react-modal's app root to, default is `#___gatsby`
+			    //     // See http://reactcommunity.org/react-modal/accessibility/#app-element
+			    //     appElement: '#___gatsby',
 
-			        // Object of props that will be passed to the react-modal container
-			        // See http://reactcommunity.org/react-modal/#usage
-			        modalProps: { },
-			      }
-			    },
+			    //     // Object of props that will be passed to the react-modal container
+			    //     // See http://reactcommunity.org/react-modal/#usage
+			    //     modalProps: { },
+			    //   }
+			    // },
 			  // Requires for cart management
 			  '@stripe/stripe-js',
-			  //'use-shopping-cart',
+			  'use-shopping-cart',
 			  'crypto',
 			  'crypto-browserify',
 			  '@emotion/react',
