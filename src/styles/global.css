@@ -19,7 +19,7 @@ a {
 }
 
 a:hover, a:focus {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 p, span {
@@ -41,7 +41,6 @@ button {
 
 .heading-first {
     color: rgba(0,0,0, 0.85);
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     padding: 1rem 0;

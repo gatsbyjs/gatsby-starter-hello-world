@@ -14,12 +14,16 @@
     padding: 1rem;
 }
 
+.layout__headerLogo {
+    max-height: 60px !important;
+}
+
 .layout__headerText {
     font-size: 1.88rem;
     font-weight: 300;
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .layout__menuButton {

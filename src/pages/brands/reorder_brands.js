@@ -29,7 +29,8 @@ export default function Home({ data, location, pageContext }) {
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <div className={styles.brand_summary_container}>
         <div className={styles.brand_left_container}>
-          Currently have {casecount} in the basket Minimum case order is
+          Currently have {casecount} in the basket.
+          Minimum case order is
         </div>
 
         <div className={styles.brand_right_container}>
@@ -76,7 +77,7 @@ export default function Home({ data, location, pageContext }) {
 }
 
 export const query = graphql`
-  query($brand_id: String!, $email: String!) {
+  query($brand_id: String, $email: String) {
     all_brand_products: allAirtable(
       filter: {
         table: { eq: "product_catalog" }
@@ -93,6 +94,7 @@ export const query = graphql`
             price
             product_id
             image_url_1
+            brand_mixmatch_moq
           }
         }
       }

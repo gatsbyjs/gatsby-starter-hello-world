@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import * as styles from './Layout.module.css';
 import { useShoppingCart } from 'use-shopping-cart';
+import logo from "./images/logo.png"
 
 
 
@@ -21,15 +22,16 @@ export default function Layout({ children, location, pageContext }) {
   
   const { cartDetails } = useShoppingCart()
   
+
   return (
   	<div className={styles.layout}>
 	    <header className={styles.layout__header}>
 	        <div style={{ display: `flex` }}>
 	            { !(typeof brand_id == "undefined") && (
 	            <Link to={`/customer/${email}`}>
-	                <h2 className={styles.layout__headerText}>
+	                <h4 className={styles.layout__headerText}>
 	                &#60; Back 
-	                </h2>
+	                </h4>
 	            </Link>)
 	        }
 	        </div>	        
@@ -37,14 +39,14 @@ export default function Layout({ children, location, pageContext }) {
 
 	        <div style={{ display: `flex` }}>
 	            <Link to={`/customer/${email}`}>
-	                <img src='./images/logo.png'/ >
+	                <img class={styles.layout__headerLogo} src={logo} />
 	            </Link>
 	        </div>
 	       	<div style={{ display: `flex`, align : 'right' }}>
 	            <Link to="/cart">
-	                <h2 className={styles.layout__headerText}>
+	                <h4 className={styles.layout__headerText}>
 	                    Cart
-	                </h2>
+	                </h4>
 	            </Link>
 	        </div>
 	    </header>

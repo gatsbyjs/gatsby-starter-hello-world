@@ -74,14 +74,16 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
       >
         {numeral(product.price).format("$0,0.00")}
       </p>
-      <QtyPicker
-        setPcount={setPcount}
-        pcount={
-          typeof cartDetails[String(product.product_id)] === "undefined"
-            ? 0
-            : cartDetails[String(product.product_id)]["quantity"]
-        }
-      />
+      <div className={pstyles.qtypicker}>
+          <QtyPicker
+            setPcount={setPcount}
+            pcount={
+              typeof cartDetails[String(product.product_id)] === "undefined"
+                ? 0
+                : cartDetails[String(product.product_id)]["quantity"]
+            }
+          />
+      </div>
     </div>
   )
 }
