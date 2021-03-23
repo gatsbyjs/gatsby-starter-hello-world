@@ -37,9 +37,7 @@ export default function Layout({ children, location, pageContext }) {
 
 	        <div style={{ display: `flex` }}>
 	            <Link to={`/customer/${email}`}>
-	                <h2 className={styles.layout__headerText}>
-	                    Reorder for your store
-	                </h2>
+	                <img src="./images/logo.png"</img>
 	            </Link>
 	        </div>
 	       	<div style={{ display: `flex`, align : 'right' }}>

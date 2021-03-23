@@ -41,7 +41,7 @@ export default function Home({ data, location, pageContext }) {
 }
 
 export const query = graphql`
-  query($email: String!) {
+  query($email: String) {
     allAirtable(filter: { table: { eq: "ordered_brands" }, data: {email: {eq: $email}}}, limit: 50) {
       edges {
         node {
