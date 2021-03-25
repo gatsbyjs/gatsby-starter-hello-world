@@ -7,19 +7,7 @@ import * as styles from "../styles/home.module.css"
 
 export default function Home({ data, location }) {
   return (
-    <Layout location={location}>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <div className="content-container">
-        <h2 className="heading-first">Product from the brand</h2>
-        <div className={styles.home__contentGrid}>
-          {data.allAirtable.edges.map(({ node }) => {
-            return <ProductCard id={node.id} product={{ ...node.data }} />
-          })}
-        </div>
-      </div>
-
-      <Link to="/page-2/">Go to page 2</Link>
-    </Layout>
+    ""
   )
 }
 
