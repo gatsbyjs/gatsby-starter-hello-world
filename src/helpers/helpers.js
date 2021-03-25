@@ -38,7 +38,7 @@ export const cartBrandShipping = (cart, brand_id) => {
 // Sums the subtotal wholesale price
 export const cartBrandSubtotal = (cart, brand_id) => {
 	return Object.keys(cart).reduce((acc, cur) => {
-		return cart[cur]["brand_id"] === brand_id
+		return (cart[cur]["brand_id"] === brand_id)
 			? acc + cart[cur]["price"] * cart[cur]["quantity"]
 			: acc
 	}, 0)
@@ -71,6 +71,14 @@ export const cartWholesaleTotal = (cart) => {
 		return acc + cart[cur]["price"]* cart[cur]["quantity"]
 	}, 0)
 }
+
+// Sums the total quantity in the cart
+export const cartQtyTotal = (cart) => {
+	return Object.keys(cart).reduce((acc, cur) => {
+		return acc + cart[cur]["quantity"]
+	}, 0)
+}
+
 
 // Sums the shipping price in the cart
 export const cartShippingTotal = (cart) => {

@@ -24,7 +24,7 @@ export default function Home({ data, location }) {
 }
 
 export const query = graphql`
-  query($brand_id: String!) {
+  query($brand_id: String) {
     allAirtable(filter: { table: { eq: "product_catalog" }, data: { brand_id: {eq: $brand_id}}}, limit: 50) {
       edges {
         node {

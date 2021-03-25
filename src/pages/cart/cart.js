@@ -49,7 +49,7 @@ export default function Cart({ data, location, pageContext }) {
           {data.brands.edges
             .filter(edge => b_list.includes(edge.node.data.brand_id))
             .map(({ node }) => {
-              return <CartBrandSection key={node.id} brand={{ ...node.data }} />
+              return <CartBrandSection key={node.id} brand={{ ...node.data }} pageContext={pageContext} />
             })}
         </div>
 
