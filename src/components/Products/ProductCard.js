@@ -25,18 +25,17 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
   const prevPcount = usePrevious(pcount)
 
   const cart_product = {
-    // Line item name to be shown on the Stripe Checkout page
     name: product.name,
     sku: product.product_id,
-    // price in smallest currency unit (e.g. cent for USD)
-    price: product.price,
+    price: parseFloat(product.product_wholesale_price),
     currency: "USD",
     image: product.product_url_1,
-    product_data: brand_id,
+    brand_id: brand_id,
+    shipping: parseFloat(product.product_average_local_shipping),
   }
 
   useEffect(() => {
-    if (!(pcount > 1 && prevPcount == 0)) {
+    if (!(pcount > 1 && prevPcount === 0)) {
       setCasecount(casecount + pcount - prevPcount)
       console.log(pcount)
       console.log(prevPcount)
@@ -46,13 +45,13 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
         } else {
           addItem(cart_product)
         }
-      } else if (pcount == 0 && prevPcount == 1) {
+      } else if (pcount === 0 && prevPcount === 1) {
         removeItem(product.product_id)
       } else if (pcount < prevPcount) {
         decrementItem(product.product_id, prevPcount - pcount)
       }
     }
-    else if (pcount==1) {
+    else if (pcount === 1) {
         console.log(prevPcount);
     }
 
@@ -63,16 +62,18 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
 
   return (
     <div className={pstyles.productItem}>
-      <img
-        src={product.image_url_1}
-        alt={product.name}
-        style={{ margin: `0 0 0.25rem 0` }}
-      />
+      <div className={pstyles.productItem__imgContainer}>
+        <img
+          src={product.image_url_1}
+          alt={product.name}
+          style={{ margin: `0 0 0.25rem 0` }}
+        />
+      </div>
       <p className={pstyles.productItem__text}>{product.name}</p>
       <p
         className={`${pstyles.productItem__text} ${pstyles.productItem__textLight}`}
       >
-        {numeral(product.price).format("$0,0.00")}
+        WS {numeral(product.product_wholesale_price).format("$0,0.00")}
       </p>
       <div className={pstyles.qtypicker}>
           <QtyPicker

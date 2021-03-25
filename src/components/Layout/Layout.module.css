@@ -1,6 +1,6 @@
 .layout {
-    margin: 0 auto; 
-    width: 100%;
+   margin: 0 auto; 
+   width: 100%;
 }
 
 .layout__cartOpen {
@@ -12,10 +12,15 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background: white;
 }
 
 .layout__headerLogo {
-    max-height: 60px !important;
+    max-height: 40px !important;
+    justify-content: center !important;
 }
 
 .layout__headerText {
@@ -24,6 +29,15 @@
     margin: 0;
     padding: 0;
     text-decoration: none !important;
+}
+
+.layout__headerText_right {
+    font-size: 1.88rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    text-decoration: none !important;
+    text-align : right;
 }
 
 .layout__menuButton {

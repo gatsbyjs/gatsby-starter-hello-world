@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 //import gql from "graphql-tag"
 //import { useQuery } from "@apollo/react-hooks"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 //import Img from "gatsby-image"
 //import Checkout from "../components/checkout"

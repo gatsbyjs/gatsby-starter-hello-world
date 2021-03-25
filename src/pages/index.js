@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import gql from "graphql-tag"
-import { useQuery } from "@apollo/react-hooks"
-import { graphql, Link } from "gatsby"
+//import { useQuery } from "@apollo/react-hooks"
+import { graphql } from "gatsby"
 
 //import Img from "gatsby-image"
 
 import Layout from "../components/Layout/Layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-import Checkout from "../components/checkout"
 import ProductCard from "../components/Products/ProductCard"
 import * as styles from "./styles/home.module.css"
 

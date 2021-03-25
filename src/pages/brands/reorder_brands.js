@@ -1,13 +1,9 @@
 import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
-
-import Img from "gatsby-image"
-
+import { graphql } from "gatsby"
 import Layout from "../../components/Layout/Layout"
 import SEO from "../../components/seo"
 import ProductCard from "../../components/Products/ProductCard"
 import * as styles from "../styles/home.module.css"
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 import { useShoppingCart } from "use-shopping-cart"
 
 
@@ -18,7 +14,7 @@ export default function Home({ data, location, pageContext }) {
 
 
   const qitems = Object.keys(cartDetails).reduce((acc, cur) => {
-     return ((cartDetails[cur]['product_data'] == brand_id) ? acc+cartDetails[cur]['quantity'] : acc) },0)
+     return ((cartDetails[cur]['brand_id'] === brand_id) ? acc+cartDetails[cur]['quantity'] : acc) },0)
 
   const [casecount, setCasecount] = useState(qitems)
 
@@ -28,19 +24,25 @@ export default function Home({ data, location, pageContext }) {
     <Layout location={location} pageContext={pageContext} >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <div className={styles.brand_summary_container}>
+
         <div className={styles.brand_left_container}>
-          Currently have {casecount} in the basket.
-          Minimum case order is
+          <b>Brand minimum: </b><br/>{`${data.brand.data.brand_mixmatch_moq}`} case{(data.brand.data.brand_mixmatch_moq>1) && 's'}.
+        </div>
+
+        <div className={styles.brand_center_container}>
+          <b>Currently in cart:</b><br/> {`${casecount}`} case{(casecount>1) && 's'}.
         </div>
 
         <div className={styles.brand_right_container}>
-          
+        { (data.brand.data.brand_mixmatch_moq <= casecount) && `🎉 Brand minimum reached 🎉` }
+        { (data.brand.data.brand_mixmatch_moq > casecount) && (`Add ${data.brand.data.brand_mixmatch_moq-casecount} case(s) to checkout`) }
         </div>
       </div>
 
+
       <div className={styles.content_container}>
         <div className={styles.home__header_sub_menu}>
-          <h2>Previous orders</h2>
+          <h2>Previous orders from {`${data.brand.data.brand_name}`}</h2>
         </div>
         <div className={styles.home__contentGrid}>
           {data.all_ordered_products.edges.map(({ node }) => {
@@ -114,11 +116,13 @@ export const query = graphql`
             price
             product_id
             image_url_1
+            product_average_local_shipping
+            product_wholesale_price
           }
         }
       }
     }
-    brand: airtable(data: { brand_id: { eq: $brand_id } }) {
+    brand: airtable(data: { brand_id: { eq: $brand_id } }, table: {eq: "brand_catalog"}) {
       id
       data {
         brand_name

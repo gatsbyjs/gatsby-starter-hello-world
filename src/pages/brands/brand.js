@@ -1,12 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
-
-import Img from "gatsby-image"
-
 import Layout from "../../components/Layout/Layout"
-import Image from "../../components/image"
 import SEO from "../../components/seo"
-import Checkout from "../../components/checkout"
 import ProductCard from "../../components/Products/ProductCard"
 import * as styles from "../styles/home.module.css"
 

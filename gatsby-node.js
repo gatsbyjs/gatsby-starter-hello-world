@@ -65,6 +65,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+  
+  results.data.ordered_brands.edges.forEach(({ node }) => {
+    createPage({
+      path: 'customer/'+node.data.email+'/cart',
+      component: path.resolve(`./src/pages/cart/cart.js`),
+      context: {
+        email: node.data.email,
+      },
+    });
+  });
 
 
 }

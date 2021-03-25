@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import numeral from 'numeral';
-import { Link } from 'gatsby';
-import Img from "gatsby-image";
 import "./styles/QtyPicker.scss";
 import { usePrevious } from "../../hooks/usePrevious"
 
@@ -23,7 +20,7 @@ const QtyPicker = ({ pcount, setPcount }) => {
   }
 
   useEffect(() => {
-      if (count != prevCount) {
+      if (count !== prevCount) {
       setPcount(count);
       }
   }, [count]);

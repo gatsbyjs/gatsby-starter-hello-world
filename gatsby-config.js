@@ -34,32 +34,22 @@ module.exports = {
 		        {
 		          baseId: process.env.AIRTABLE_BASE_MERCHANDISING_ID,
 		          tableName: `product_catalog`,
-		          // can leave off queryName, mapping or tableLinks if not needed
 		        },
 		        {
 		          baseId: process.env.AIRTABLE_BASE_CUSTOMER_ID,
 		          tableName: `customers`,
-		          // can leave off queryName, mapping or tableLinks if not needed
 		        },
 		        {
 		          baseId: process.env.AIRTABLE_BASE_MERCHANDISING_ID,
 		          tableName: `brand_catalog`,
-		          // can leave off queryName, mapping or tableLinks if not needed
-		        },
-		        {
-		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
-		          tableName: `reorders`,
-		          // can leave off queryName, mapping or tableLinks if not needed
 		        },
 		        {
 		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
 		          tableName: `ordered_brands`,
-		          // can leave off queryName, mapping or tableLinks if not needed
 		        },
 		        {
 		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
 		          tableName: `ordered_products`,
-		          // can leave off queryName, mapping or tableLinks if not needed
 		        }
 		      ]}},
 		     //  {
