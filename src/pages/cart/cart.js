@@ -59,11 +59,13 @@ export default function Cart({ data, location, pageContext }) {
             <span>{`${data.customer.data.First_Name} ${data.customer.data.Last_Name}` }<br/>
             {`${data.customer.data.Company}`}<br/>
             {data.customer.data.shipping_address1}<br/>
-            {data.customer.data.Company}<br/>
+            {data.customer.data.shipping_city}, {data.customer.data.shipping_state_or_province}, {data.customer.data.shipping_postal_code}<br/>
+            {data.customer.data.country}
             </span>
           </div>
           <div className={styles.order__summarypayment}>
             <h2>Payment Terms</h2>
+            <span>Your payment terms are {data.customer.data.terms}</span>
           </div>
           <div className={styles.order__summarytotals}>
             <h2>Order totals</h2>
