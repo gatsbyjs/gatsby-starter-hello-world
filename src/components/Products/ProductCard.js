@@ -29,7 +29,7 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
     sku: product.product_id,
     price: parseFloat(product.product_wholesale_price),
     currency: "USD",
-    image: product.product_url_1,
+    image: product.image_url_1,
     brand_id: brand_id,
     shipping: parseFloat(product.product_average_local_shipping),
   }

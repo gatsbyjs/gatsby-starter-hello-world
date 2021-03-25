@@ -10,29 +10,9 @@ import SEO from "../components/seo"
 import ProductCard from "../components/Products/ProductCard"
 import * as styles from "./styles/home.module.css"
 
-export default function Home({ data, location }) {
+export default function Home({ data, location ,pageContext }) {
   return (
-    <Layout location={location} name="name">
-      <SEO title="Reorder | The Good Trends" keywords={[`gatsby`, `application`, `react`]} />
-      <div className="content-container">
-        <div className={styles.home__contentGrid}>
-          {data.allAirtable.edges.map(({ node }) => {
-            return <ProductCard key={node.id} product={{ ...node.data }} />
-          })}
-        </div>
-      </div>
-      <div className="content-container">
-        <div className={styles.home__about}>
-          <div>
-            <h2 className="heading-first">Contact us.</h2>
-            <p>
-              If you need any help with your reorder, contact us at info@thegoodtrends.com
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </Layout>
+    ""
   )
 }
 

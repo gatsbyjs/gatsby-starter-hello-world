@@ -96,6 +96,8 @@ export const query = graphql`
             price
             product_id
             image_url_1
+            product_average_local_shipping
+            product_wholesale_price
             brand_mixmatch_moq
           }
         }

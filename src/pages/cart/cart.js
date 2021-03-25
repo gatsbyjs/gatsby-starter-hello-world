@@ -56,6 +56,11 @@ export default function Cart({ data, location, pageContext }) {
         <div className={styles.order__summarycontainer}>
           <div className={styles.order__summaryshipping}>
             <h2>Shipping Details</h2>
+            <span>{`${data.customer.data.First_Name} ${data.customer.data.Last_Name}` }<br/>
+            {`${data.customer.data.Company}`}<br/>
+            {data.customer.data.shipping_address1}<br/>
+            {data.customer.data.Company}<br/>
+            </span>
           </div>
           <div className={styles.order__summarypayment}>
             <h2>Payment Terms</h2>
@@ -66,16 +71,16 @@ export default function Cart({ data, location, pageContext }) {
               <span>
                 <b>Subtotal</b>
               </span>
-              <span>
+              <span style={{float:`right`}}>
                 {" "}
                 {numeral(cartWholesaleTotal(cartDetails)).format("$0,0.00")}
               </span>
             </p>
             <p>
-              <span>
+              <span >
                 <b>Shipping</b>
               </span>
-              <span>
+              <span style={{float:`right`}}>
               {" "}
                 {numeral(cartShippingTotal(cartDetails)).format("$0,0.00")}
               </span>
@@ -84,7 +89,7 @@ export default function Cart({ data, location, pageContext }) {
               <span>
                 <b>Total</b>
               </span>
-              <span>{" "}{numeral(cartTotal(cartDetails)).format("$0,0.00")}</span>
+              <span style={{float:`right`}}>{" "}{numeral(cartTotal(cartDetails)).format("$0,0.00")}</span>
             </p>
           </div>
         </div>
@@ -128,6 +133,7 @@ export const query = graphql`
         brand_image_url
         brand_mixmatch_moq
         First_Name
+        Last_Name
         Company
         shipping_address1
         shipping_address2

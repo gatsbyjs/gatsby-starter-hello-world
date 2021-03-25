@@ -1,3 +1,8 @@
+.content_container{
+
+}
+
+
 .home__cta {
     align-items: flex-end;
     background: url('../images/home_cta_background.png');
@@ -182,6 +187,13 @@
 }
 
 
+.cart__summary{
+  width:100%;
+}
+
+.cart__summary_header{
+  width:100%;
+}
 .order__summarycontainer{
   width:100%;
 }
@@ -208,6 +220,10 @@
   vertical-align:top;
   border: solid 1px #EEEEEE;
   padding: 0px 5px 25px 5px;
+}
+
+.order__buttonlayout{
+  
 }
 
 @media screen and (max-width: 700px) {

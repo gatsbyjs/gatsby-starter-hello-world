@@ -1,7 +1,12 @@
 
+.brandcart__lineitem{
+  width: 100%;
+  padding:5px 5px 5px 5px;
+}
+
 .brandcart__lineitemimgcontainer{
   width:20%;
-  height:30px;
+  height:100px;
   border: solid 1px #EEEEEE;
   overflow: hidden;
   margin: 0 auto;
@@ -17,10 +22,20 @@
 }
 
 .brandcart__lineitemleft{
-
+  width: 60%;
+  display:inline-block;
+  text-align:left;
+  vertical-align: top;
+  margin: auto;
+  padding: 10px 0px 0px 5px;
 }
 
 .brandcart__lineitemright{
+  width: 20%;
+  display:inline-block;
+  text-align:right;
+  vertical-align: top;
+  padding: 40px 5px 0px 0px;
 
 }
 
@@ -51,7 +66,7 @@
 .brandcart__header{
   width:100%;
   padding: 5px 5px 5px 5px;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #EEEEEE;
   background: #F0F0F0;
 }
 
@@ -93,7 +108,7 @@
   cursor:pointer;
   color:#ffffff;
   font-family:Arial;
-  font-size:16px;
+  font-size:14px;
   font-weight:bold;
   padding:5px 10px 5px 10px;
   text-decoration:none;

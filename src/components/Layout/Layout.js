@@ -4,16 +4,12 @@ import * as styles from "./Layout.module.css"
 import { useShoppingCart } from "use-shopping-cart"
 import logo from "./images/logo.png"
 import numeral from "numeral"
-import {
-  cartWholesaleTotal,
-  cartQtyTotal,
-} from "../../helpers/helpers"
-
+import { cartWholesaleTotal, cartQtyTotal } from "../../helpers/helpers"
 
 export default function Layout({ children, location, pageContext }) {
 	const path = location.pathname
 
-	const { brand_id, email } = pageContext
+	const { brand_id, email } = pageContext;
 
 	const data = useStaticQuery(graphql`
 		query {

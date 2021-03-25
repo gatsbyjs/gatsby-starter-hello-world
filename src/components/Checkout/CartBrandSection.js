@@ -12,11 +12,11 @@ import { Link } from "gatsby"
 
 const CartBrandSection = ({ brand, pageContext }) => {
   const { cartDetails, clearCart } = useShoppingCart()
-  const { email } = pageContext
-  const qitems = cartBrandQty(cartDetails, brand.brand_id)
-  console.log(cartDetails)
   
-console.log(brand.brand_mixmatch_moq)
+  const { email } = pageContext
+  
+  const qitems = cartBrandQty(cartDetails, brand.brand_id)
+  
   return (
     <div className={styles.brandcart__container}>
       <div className={styles.brandcart__header}>
@@ -51,13 +51,32 @@ console.log(brand.brand_mixmatch_moq)
         </div>
       </div>
 
-      <div className={styles.brandcart__lineitem}>
-        <div className={styles.brandcart__lineitemimgcontainer}>
-          <img alt="" />
-        </div>
-        <div className={styles.brandcart__lineitemleft}></div>
-        <div className={styles.brandcart__lineitemright}></div>
-      </div>
+      {Object.keys(cartDetails)
+            .filter((key) => (cartDetails[key]['brand_id'] === brand.brand_id))
+            .map((key) => {
+            console.log(key)
+            console.log(cartDetails)
+            return (
+            <div className={styles.brandcart__lineitem}>
+              
+              <div className={styles.brandcart__lineitemimgcontainer}>
+                <img src={cartDetails[key]['image']}/>
+              </div>
+
+              <div className={styles.brandcart__lineitemleft}>
+              <p>{`${cartDetails[key]['name']}`}</p>
+              <span style={{color: `grey`}}>{`Qty: ${cartDetails[key]['quantity']}`} cases </span> 
+              </div>
+              <div className={styles.brandcart__lineitemright}>
+              {numeral(cartDetails[key]['quantity']*cartDetails[key]['price']).format(
+              "$0,0.00"
+              )}
+              </div>
+            </div>
+            )
+       })}
+
+
     </div>
   )
 }

@@ -35,16 +35,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  results.data.brands.edges.forEach(({ node }) => {
-    createPage({
-      path: String(node.data.brand_id),
-      component: path.resolve(`./src/pages/brands/brand.js`),
-      context: {
-        brand_id: node.data.brand_id,
-      },
-    });
-  });
-
   results.data.ordered_brands.edges.forEach(({ node }) => {
     createPage({
       path: 'customer/'+node.data.email,
