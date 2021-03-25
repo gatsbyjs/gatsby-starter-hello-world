@@ -114,7 +114,6 @@
   width:50%;
   text-align:center;
   display:inline-flex;
-  text-align:center;
   color: grey !important;
   border-bottom: 5px solid grey;
   padding: "1rem";
@@ -199,31 +198,68 @@
 }
 
 .order__summaryshipping{
-  width:33%;
+  width:33.33%;
   display:inline-block;
+  height:230px;
   vertical-align:top;
   border: solid 1px #EEEEEE;
-  padding: 0px 5px 25px 5px;
+  padding: 0px 10px 25px 10px;
 }
 
 .order__summarypayment{
-  width:33%;
+  width:33.33%;
+  height:230px;
   display:inline-block;
   vertical-align:top;
   border: solid 1px #EEEEEE;
-  padding: 0px 5px 25px 5px;
+  padding: 0px 10px 25px 10px;
 }
 
 .order__summarytotals{
-  width:33%;
+  width:33.33%;
+  height:230px;
   display:inline-block;
   vertical-align:top;
   border: solid 1px #EEEEEE;
-  padding: 0px 5px 25px 5px;
+  padding: 0px 10px 25px 10px;
 }
 
-.order__buttonlayout{
-  
+.order__buttoncontainer{
+  width: 100%;
+  display: inline-block;
+  text-align:center;
+  padding:10px 5px 10px 5px;
+  border: solid 1px #EEEEEE;
+  margin:20px 0px 20px 0px;
+}
+
+
+.order__button {
+  max-width:200px;
+  width:100%;
+  height:50px;
+  min-width: 60px;
+  box-shadow:inset 0px 0px 0px 0px #37ff00;
+  background-color:#000000;
+  border:1px solid #000000;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  padding:5px 10px 5px 10px;
+  text-decoration:none;
+  line-height: 1.1em;
+  margin:20px 0px 20px 0px;
+}
+.order__button:hover {
+  background-color:#ffffff;
+  color:black;
+}
+.order__button:active {
+  position:relative;
+  top:1px;
 }
 
 @media screen and (max-width: 700px) {

@@ -65,7 +65,10 @@ export default function Cart({ data, location, pageContext }) {
           </div>
           <div className={styles.order__summarypayment}>
             <h2>Payment Terms</h2>
-            <span>Your payment terms are {data.customer.data.terms}</span>
+            <span>Your payment terms are {data.customer.data.terms_day__from_terms_mapping_[0]} days<br/>
+                Payment by {data.customer.data.payment_method[0]}
+
+            </span>
           </div>
           <div className={styles.order__summarytotals}>
             <h2>Order totals</h2>
@@ -95,8 +98,8 @@ export default function Cart({ data, location, pageContext }) {
             </p>
           </div>
         </div>
-        <div className={styles.order__buttonlayout}>
-          <button className={styles.order__buttonlayout} onClick={placeOrder} />
+        <div className={styles.order__buttoncontainer}>
+          <button className={styles.order__button} onClick={placeOrder} name="PLACE ORDER" value={cartDetails}>PLACE ORDER</button>
         </div>
       </div>
     </Layout>
@@ -144,7 +147,8 @@ export const query = graphql`
         shipping_country
         shipping_state_or_province
         shipping_postal_code
-        terms
+        payment_method
+        terms_day__from_terms_mapping_
       }
     }
   }

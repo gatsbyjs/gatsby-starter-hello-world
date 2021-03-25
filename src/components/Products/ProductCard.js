@@ -37,8 +37,8 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
   useEffect(() => {
     if (!(pcount > 1 && prevPcount === 0)) {
       setCasecount(casecount + pcount - prevPcount)
-      console.log(pcount)
-      console.log(prevPcount)
+      //console.log(pcount)
+      //console.log(prevPcount)
       if (pcount > prevPcount) {
         if ((product.product_id in cartDetails) && (pcount > cartDetails[product.product_id].quantity)) {  
           incrementItem(product.product_id, pcount - prevPcount)
@@ -55,7 +55,7 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
         console.log(prevPcount);
     }
 
-    console.log(cartDetails)
+    //console.log(cartDetails)
     //console.log(String(product.product_id))
     //clearCart()
     }, [pcount])
