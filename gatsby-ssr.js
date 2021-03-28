@@ -6,6 +6,7 @@ import getStripe from "./src//utils/stripejs"
 // Fauna DB
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/client';
+import fetch from 'isomorphic-fetch';
 const { GRAPHQL_URL } = process.env
 
 // Initiate Stripe

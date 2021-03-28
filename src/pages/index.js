@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import { useQuery } from "@apollo/client"
 import { graphql } from "gatsby"
-import { gql } from "apollo-boost"
+import { gql } from "graphql-tag"
 import logo from "../images/logo.png"
 
 import SimpleLayout from "../components/Layout/SimpleLayout"
