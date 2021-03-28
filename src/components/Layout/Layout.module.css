@@ -8,7 +8,7 @@
 }
 
 .layout__header {
-    align-items: center;
+    align-items: top;
     display: flex;
     justify-content: space-between;
     padding: 1rem;
@@ -16,6 +16,25 @@
     position: sticky;
     top: 0;
     background: white;
+}
+
+
+.layout__headerleft{
+    vertical-align: top;
+    display: block;
+    padding-top:10px;
+    display: flex;
+    width: 33%;
+    justify-content: left;
+    align-content: top;
+}
+
+.layout__headerright{
+    position: top;
+    padding-top:20px;
+    display: flex;
+    width: 33%;
+    justify-content: right;
 }
 
 .layout__headerLogo {

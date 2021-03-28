@@ -4,7 +4,6 @@ import { useQuery } from "@apollo/react-hooks"
 import { graphql } from "gatsby"
 import { gql } from "apollo-boost"
 import logo from "../images/logo.png"
-import { getFormValues } from "redux-form"
 
 import SimpleLayout from "../components/Layout/SimpleLayout"
 import ProductCard from "../components/Products/ProductCard"

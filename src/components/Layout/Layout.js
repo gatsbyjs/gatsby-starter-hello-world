@@ -26,8 +26,8 @@ export default function Layout({ children, location, pageContext }) {
 	return (
 		<div className={styles.layout}>
 			<header className={styles.layout__header}>
-				<div style={{ display: `flex`, width: `33%`, justifyContent: `left` }}>
-					<div>
+				<div className={styles.layout__headerleft}>
+					<div >
 						{!(
 							typeof brand_id == "undefined" &&
 							!location.pathname.includes("cart")
