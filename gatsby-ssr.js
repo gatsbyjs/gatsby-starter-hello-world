@@ -6,7 +6,6 @@ import getStripe from "./src//utils/stripejs"
 // Fauna DB
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/client';
-import { graphql } from "gatsby";
 const { GRAPHQL_URL } = process.env
 
 // Initiate Stripe
@@ -31,12 +30,12 @@ export const wrapRootElement = ({ element }) => {
   return (
   <ApolloProvider client={client} >
     <CartProvider mode="checkout-session" stripe={stripePromise} currency="USD">
-		  		
-		  {element}
-		
-   	</CartProvider>
+          
+      {element}
+    
+    </CartProvider>
   </ApolloProvider>
-  	);
+    );
 }
 
 

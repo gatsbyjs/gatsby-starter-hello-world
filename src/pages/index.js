@@ -40,7 +40,7 @@ export default function Home({ data, location, pageContext }) {
           navigate(`/customer/${useremail}`, {
             state: { useremail },
           })} else {
-            setErrormessage("We couldn't recognize this email")
+            setErrormessage("We couldn't recognizze this email")
           }
     }
   }

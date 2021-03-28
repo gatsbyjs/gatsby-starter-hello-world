@@ -19,7 +19,9 @@ export default function Home({ data, location, pageContext }) {
 
   const p_list = data.all_ordered_products.edges.reduce((acc, cur) => {return acc.concat([cur.node.data.product_id])},[])
 
+  const meetmin=(casecount >= data.brand.data.brand_mixmatch_moq)
 
+  console.log(meetmin)
   return (
     <Layout location={location} pageContext={pageContext} >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -28,7 +30,7 @@ export default function Home({ data, location, pageContext }) {
         <div className={styles.brand_left_container}>
           <span><b>Brand minimum</b><br/>{`${data.brand.data.brand_mixmatch_moq}`} case{(data.brand.data.brand_mixmatch_moq>1) && 's'}.</span>
         </div>
-        <div className={styles.brand_right_container}>
+        <div className={`brand_right_container${meetmin ? '__belowmin' : '__abovemin'}`}>
           <span><b>Currently in cart</b><br/> {`${casecount}`} case{(casecount>1) && 's'}.</span>
         </div>
         </div>
