@@ -1,4 +1,3 @@
-
 // Css import of global styles
 import "./src/styles/global.css"
 import React from 'react';
@@ -8,8 +7,13 @@ import { CartProvider } from 'use-shopping-cart'
 import getStripe from "./src//utils/stripejs"
 // Fauna DB
 import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
-import { graphql } from "gatsby"
+import { ApolloProvider } from '@apollo/client';
+import { graphql } from "gatsby";
+//import { ApolloClient, ApolloLink, createHttpLink } from '@apollo/client';
+//import fetch from 'isomorphic-fetch';
+const { GRAPHQL_URL } = process.env
+
+
 
 
 // Initiate Stripe
@@ -26,26 +30,19 @@ export const query = graphql`
   }
 `
 // Initiate Apollo
-const client = new ApolloClient({
-  uri: "https://tgtreorder.netlify.app/.netlify/functions/graphql",
-  request: operation => {
-    operation.setContext({
-      headers: {
-        Authorization: "Bearer <CLIENT_KEY>",
-      },
-    })
-  },
-})
-
-
+  const client = new ApolloClient({
+    uri: GRAPHQL_URL,
+  })
 
 export const wrapRootElement = ({ element }) => {
   return (
+  <ApolloProvider client={client} >
     <CartProvider mode="checkout-session" stripe={stripePromise} currency="USD">
-		<ApolloProvider client={client}>		
-		{element}
-		</ApolloProvider>
- 	</CartProvider>
+		  		
+		  {element}
+		
+   	</CartProvider>
+  </ApolloProvider>
   	);
 }
 

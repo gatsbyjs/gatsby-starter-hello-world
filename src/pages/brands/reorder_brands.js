@@ -1,11 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout/Layout"
 import SEO from "../../components/seo"
 import ProductCard from "../../components/Products/ProductCard"
 import * as styles from "../styles/home.module.css"
 import { useShoppingCart } from "use-shopping-cart"
-
 
 export default function Home({ data, location, pageContext }) {
 
@@ -19,23 +18,19 @@ export default function Home({ data, location, pageContext }) {
   const [casecount, setCasecount] = useState(qitems)
 
   const p_list = data.all_ordered_products.edges.reduce((acc, cur) => {return acc.concat([cur.node.data.product_id])},[])
-  
+
+
   return (
     <Layout location={location} pageContext={pageContext} >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <div className={styles.brand_summary_container}>
-
+      <div  className={styles.brand_summary_container}>
+        <div className={styles.brand_center_header}>
         <div className={styles.brand_left_container}>
-          <b>Brand minimum: </b><br/>{`${data.brand.data.brand_mixmatch_moq}`} case{(data.brand.data.brand_mixmatch_moq>1) && 's'}.
+          <span><b>Brand minimum</b><br/>{`${data.brand.data.brand_mixmatch_moq}`} case{(data.brand.data.brand_mixmatch_moq>1) && 's'}.</span>
         </div>
-
-        <div className={styles.brand_center_container}>
-          <b>Currently in cart:</b><br/> {`${casecount}`} case{(casecount>1) && 's'}.
-        </div>
-
         <div className={styles.brand_right_container}>
-        { (data.brand.data.brand_mixmatch_moq <= casecount) && `🎉 Brand minimum reached 🎉` }
-        { (data.brand.data.brand_mixmatch_moq > casecount) && (`Add ${data.brand.data.brand_mixmatch_moq-casecount} case(s) to checkout`) }
+          <span><b>Currently in cart</b><br/> {`${casecount}`} case{(casecount>1) && 's'}.</span>
+        </div>
         </div>
       </div>
 
@@ -58,7 +53,7 @@ export default function Home({ data, location, pageContext }) {
           })}
         </div>
         <div className={styles.home__header_sub_menu}>
-          <h2>Other great products you might like</h2>
+          <h2>From the same maker</h2>
         </div>
         <div className={styles.home__contentGrid}>
           {data.all_brand_products.edges.filter( (edge) => !(p_list.includes(edge.node.data.product_id)) ).map(({ node }) => {

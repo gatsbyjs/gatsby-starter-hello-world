@@ -118,13 +118,13 @@ module.exports = {
 			  {
 		      resolve: `gatsby-plugin-manifest`,
 		      options: {
-			        name: `GatsbyJS`,
-			        short_name: `GatsbyJS`,
+			        name: `The Good Trends`,
+			        short_name: `The Good Trends`,
 			        start_url: `/`,
 			        background_color: `#f7f0eb`,
-			        theme_color: `#a2466c`,
+			        theme_color: `#ff5757`,
 			        display: `standalone`,
-			        icon: `src/images/icon.png`,
+			        icon: `src/images/logo.png`,
 			      },
    			  }, 
 			  // Improve offline resilience

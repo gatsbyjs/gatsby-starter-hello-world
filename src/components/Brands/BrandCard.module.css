@@ -1,7 +1,4 @@
-.productItem img {
-    border: solid 1px #EEEEEE;
-    display: block;
-}
+
 
 .productItem__text {
     color: rgba(0,0,0, 1);
@@ -11,4 +8,20 @@
 
 .productItem__textLight {
     color: rgba(0,0,0, 0.65);
+}
+
+.productItem__imgContainer{
+  width:100%;
+  height:230px;
+  border: solid 1px #EEEEEE;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.productItem__imgContainer img {
+  height: 100%;
+  width:100%;
+  object-position: center;
+  object-fit: contain;
+  margin: 0 auto;
 }
