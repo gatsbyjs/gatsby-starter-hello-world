@@ -5,6 +5,7 @@ import { useShoppingCart } from "use-shopping-cart"
 import logo from "./images/logo.png"
 import numeral from "numeral"
 import { cartWholesaleTotal, cartQtyTotal } from "../../helpers/helpers"
+import {useSpring, animated} from 'react-spring'
 
 export default function Layout({ children, location, pageContext }) {
 	const path = location.pathname;
@@ -20,6 +21,8 @@ export default function Layout({ children, location, pageContext }) {
 			}
 		}
 	`)
+
+	const props = useSpring({opacity: 1, from: {opacity: 0}})
 
 	const { cartDetails } = useShoppingCart()
 
@@ -60,10 +63,12 @@ export default function Layout({ children, location, pageContext }) {
 						<Link to={`/customer/${email}/cart`}>
 							<h4 className={styles.layout__headerText_right}>Cart</h4>
 							<span style={{ fontSize: `0.8em` }}>
+							<animated.span style={props}>
 								{cartWholesaleTotal(cartDetails) != 0 &&
 									`Total ${numeral(cartWholesaleTotal(cartDetails)).format(
 										"$0,0.00"
 									)} | ${cartQtyTotal(cartDetails)} cases`}
+							</animated.span>
 							</span>
 						</Link>
 					</div>
