@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import { useQuery } from "@apollo/react-hooks"
+import { useQuery } from "@apollo/client"
 import { graphql } from "gatsby"
 import { gql } from "apollo-boost"
 import logo from "../images/logo.png"

@@ -1,20 +1,13 @@
-// Css import of global styles
 import "./src/styles/global.css"
 import React from 'react';
 // Stripe
-//import { loadStripe } from '@stripe/stripe-js'
 import { CartProvider } from 'use-shopping-cart'
 import getStripe from "./src//utils/stripejs"
 // Fauna DB
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/client';
 import { graphql } from "gatsby";
-//import { ApolloClient, ApolloLink, createHttpLink } from '@apollo/client';
-//import fetch from 'isomorphic-fetch';
 const { GRAPHQL_URL } = process.env
-
-
-
 
 // Initiate Stripe
 const stripePromise = getStripe()
@@ -38,12 +31,12 @@ export const wrapRootElement = ({ element }) => {
   return (
   <ApolloProvider client={client} >
     <CartProvider mode="checkout-session" stripe={stripePromise} currency="USD">
-		  		
-		  {element}
-		
-   	</CartProvider>
+          
+      {element}
+    
+    </CartProvider>
   </ApolloProvider>
-  	);
+    );
 }
 
 

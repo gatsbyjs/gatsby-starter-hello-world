@@ -124,12 +124,11 @@ module.exports = {
 			        background_color: `#f7f0eb`,
 			        theme_color: `#ff5757`,
 			        display: `standalone`,
-			        icon: `src/images/logo.png`,
+			        icon: `src/images/logosquare.png`,
 			      },
    			  }, 
 			  // Improve offline resilience
 			  `gatsby-plugin-offline`,
 			  'gatsby-plugin-sitemap',
-			  'numeral',
 			],
 };
