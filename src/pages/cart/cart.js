@@ -1,9 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import numeral from "numeral"
 import { useShoppingCart } from "use-shopping-cart"
 import Layout from "../../components/Layout/Layout"
 import SEO from "../../components/seo"
-import { graphql, Link, navigate } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import {
   cartAboveMOQ,
   brandsInCart,
@@ -11,7 +11,6 @@ import {
   cartShippingTotal,
   cartTotal,
 } from "../../helpers/helpers"
-import { logOrder } from "../../utils/airtable"
 import * as styles from "../styles/home.module.css"
 import CartBrandSection from "../../components/Checkout/CartBrandSection"
 

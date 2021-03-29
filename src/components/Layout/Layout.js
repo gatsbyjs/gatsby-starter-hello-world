@@ -74,7 +74,7 @@ export default function Layout({ children, location, pageContext }) {
 					</div>
 				</div>
 			</header>
-			<div style={{ margin: `0 auto`, maxWidth: 1200, padding: `0 1rem` }}>
+			<div style={{ margin: `0 auto`, maxWidth: 1200, padding: `0 0rem` }}>
 				{children}
 			</div>
 		</div>

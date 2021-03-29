@@ -6,13 +6,12 @@ import {
   cartBrandQty,
   cartBrandShipping,
   cartBrandSubtotal,
-  cartBrandTotal,
   caseClean,
 } from "../../helpers/helpers"
 import { Link } from "gatsby"
 
 const CartBrandSection = ({ brand, pageContext }) => {
-  const { cartDetails, clearCart } = useShoppingCart()
+  const { cartDetails } = useShoppingCart()
 
   const { email } = pageContext
 
