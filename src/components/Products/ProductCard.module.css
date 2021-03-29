@@ -1,8 +1,14 @@
 
+.productItem{
+  border: solid 1px #EEEEEE;
+  padding:5px 5px 5px 5px;
+
+}
+
+
 .productItem__imgContainer{
   width:100%;
   height:250px;
-  border: solid 1px #EEEEEE;
   overflow: hidden;
   margin: 0 auto;
 }

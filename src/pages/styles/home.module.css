@@ -165,19 +165,29 @@
 }
 
 .brand_left_container {
-  width: 50%;
+  width: 49.9%;
   display:inline-block;
   text-align:center;
   vertical-align: top;
   margin: auto;
 }
 
-.brand_right_container__abovemin {
-  width: 50%;
+.brand_right_container_abovemin {
+  width: 49.9%;
   display:inline-block;
   text-align:center;
   vertical-align: top !important;
   margin: auto;
+  background-color: #E7F1E8;
+}
+
+.brand_right_container_belowmin {
+  width: 49.9%;
+  display:inline-block;
+  text-align:center;
+  vertical-align: top !important;
+  margin: auto;
+  background-color: #FFD5D4;
 }
 
 

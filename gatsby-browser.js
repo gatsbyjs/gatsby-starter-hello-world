@@ -12,6 +12,7 @@ const { GRAPHQL_URL } = process.env
 // Initiate Stripe promise
 const stripePromise = getStripe()
 
+console.log(GRAPHQL_URL)
 // Initiate Apollo
   const client = new ApolloClient({
     uri: GRAPHQL_URL,

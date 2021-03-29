@@ -28,10 +28,10 @@ export default function Home({ data, location, pageContext }) {
       <div  className={styles.brand_summary_container}>
         <div className={styles.brand_center_header}>
         <div className={styles.brand_left_container}>
-          <span><b>Brand minimum</b><br/>{`${data.brand.data.brand_mixmatch_moq}`} case{(data.brand.data.brand_mixmatch_moq>1) && 's'}.</span>
+          <span><b>Brand minimum</b><br/>{`${data.brand.data.brand_mixmatch_moq}`} case{(data.brand.data.brand_mixmatch_moq>1) && 's'}</span>
         </div>
-        <div className={`brand_right_container${meetmin ? '__belowmin' : '__abovemin'}`}>
-          <span><b>Currently in cart</b><br/> {`${casecount}`} case{(casecount>1) && 's'}.</span>
+        <div className={meetmin ? styles.brand_right_container_abovemin : styles.brand_right_container_belowmin}>
+          <span><b>Currently in cart</b><br/> {`${casecount}`} case{(casecount>1) && 's'}</span>
         </div>
         </div>
       </div>
