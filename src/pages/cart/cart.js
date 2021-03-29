@@ -11,15 +11,16 @@ import {
   cartShippingTotal,
   cartTotal,
 } from "../../helpers/helpers"
-
 import { logOrder } from "../../utils/airtable"
-
 import * as styles from "../styles/home.module.css"
 import CartBrandSection from "../../components/Checkout/CartBrandSection"
 
+
+
+
 export default function Cart({ data, location, pageContext }) {
 
-  const { cartDetails } = useShoppingCart()
+  const { cartDetails, clearCart } = useShoppingCart()
 
   const { email } = pageContext
 
@@ -39,9 +40,6 @@ export default function Cart({ data, location, pageContext }) {
       'email' : email,
       'cart' : cartDetails
     }
-    console.log(payload)
-    console.log(url)
-    logOrder(payload)
 
     fetch(url, {
     method : 'POST', 
@@ -50,8 +48,9 @@ export default function Cart({ data, location, pageContext }) {
       'Content-Type': 'application/json'
     },
     body : JSON.stringify(payload),
-    }).then(navigate(`/customer/${email}/order-confirmation`, {
-           state: { email }})
+    }).then(() => { clearCart(); 
+           navigate(`/customer/${email}/order-confirmation`, {
+           state: { email }})}
     ).catch(error => {
                     throw(error);
                 })

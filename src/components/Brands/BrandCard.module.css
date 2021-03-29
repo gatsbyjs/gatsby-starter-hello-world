@@ -25,3 +25,10 @@
   object-fit: contain;
   margin: 0 auto;
 }
+
+.brandName__container {
+    border: solid 1px #EEEEEE;
+    vertical-align: center;
+    text-align: center;
+    padding: 10px 2px 10px 2px;
+}

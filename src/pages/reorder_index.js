@@ -34,6 +34,15 @@ export default function Home({ data, location, pageContext }) {
             </p>
           </div>
         </div>
+
+        <div className={styles.home__about}>
+          <div>
+            <h2>Contact us.</h2>
+            <p>
+              If you need any help with your reorder, contact us at info@thegoodtrends.com
+            </p>
+          </div>
+        </div>
       </div>
 
     </Layout>
