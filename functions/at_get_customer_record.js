@@ -1,11 +1,11 @@
 const Airtable = require('airtable')
 
-const { AIRTABLE_API_KEY } = process.env
-const { AIRTABLE_BASE_CUSTOMER_ID } = process.env
+const { GATSBY_AIRTABLE_API_KEY } = process.env
+const { GATSBY_AIRTABLE_BASE_CUSTOMER_ID } = process.env
 const at_base = new Airtable({
-		apiKey: AIRTABLE_API_KEY
+		apiKey: GATSBY_AIRTABLE_API_KEY
 	})
-	.base(AIRTABLE_BASE_CUSTOMER_ID)
+	.base(GATSBY_AIRTABLE_BASE_CUSTOMER_ID)
 const at_table_products = at_base('customers')
 
 

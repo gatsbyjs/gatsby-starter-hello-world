@@ -20,34 +20,34 @@ module.exports = {
 		      resolve: `gatsby-source-stripe`,
 		      options: {
 		        objects: ["Price"],
-		        secretKey: process.env.STRIPE_SECRET_KEY,
+		        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
 		        downloadFiles: false,
 		      },
 		    },	
 			{
 		    resolve: `gatsby-source-airtable`,
 		    options: {
-		      apiKey: process.env.AIRTABLE_API_KEY,
+		      apiKey: process.env.GATSBY_AIRTABLE_API_KEY,
 		      concurrency: 5, // default, see using markdown and attachments for more information
 		      tables: [
 		        {
-		          baseId: process.env.AIRTABLE_BASE_MERCHANDISING_ID,
+		          baseId: process.env.GATSBY_AIRTABLE_BASE_MERCHANDISING_ID,
 		          tableName: `product_catalog`,
 		        },
 		        {
-		          baseId: process.env.AIRTABLE_BASE_CUSTOMER_ID,
+		          baseId: process.env.GATSBY_AIRTABLE_BASE_CUSTOMER_ID,
 		          tableName: `customers`,
 		        },
 		        {
-		          baseId: process.env.AIRTABLE_BASE_MERCHANDISING_ID,
+		          baseId: process.env.GATSBY_AIRTABLE_BASE_MERCHANDISING_ID,
 		          tableName: `brand_catalog`,
 		        },
 		        {
-		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
+		          baseId: process.env.GATSBY_AIRTABLE_BASE_REORDER_ID,
 		          tableName: `ordered_brands`,
 		        },
 		        {
-		          baseId: process.env.AIRTABLE_BASE_REORDER_ID,
+		          baseId: process.env.GATSBY_AIRTABLE_BASE_REORDER_ID,
 		          tableName: `ordered_products`,
 		        }
 		      ]}},

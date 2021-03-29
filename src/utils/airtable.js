@@ -1,8 +1,8 @@
 const Airtable = require('airtable')
 
-const reorder_base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_REORDER_ID)
+const reorder_base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API_KEY }).base(process.env.GATSBY_AIRTABLE_BASE_REORDER_ID)
 
-const reorder_table= reorder_base(process.env.AIRTABLE_TABLE_REORDER_REORDERS)
+const reorder_table= reorder_base(process.env.GATSBY_AIRTABLE_TABLE_REORDER_REORDERS)
 
 
 // Creates the airtable order

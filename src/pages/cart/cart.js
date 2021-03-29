@@ -34,7 +34,7 @@ export default function Cart({ data, location, pageContext }) {
   const b_list = brandsInCart(cartDetails)
 
   const placeOrder = async () => {
-    var url=process.env.ORDER_URL;
+    var url=process.env.GATSBY_ORDER_URL;
     
     let payload={
       'email' : email,

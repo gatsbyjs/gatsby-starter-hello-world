@@ -8,7 +8,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/client';
 import fetch from 'isomorphic-fetch';
 
-const gurl  = process.env.GRAPHQL_URL
+const gurl  = process.env.GATSBY_GRAPHQL_URL
 
 // Initiate Stripe
 const stripePromise = getStripe()
