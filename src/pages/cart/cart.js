@@ -12,10 +12,10 @@ import {
   cartTotal,
 } from "../../helpers/helpers"
 
+import { logOrder } from "../../utils/airtable"
+
 import * as styles from "../styles/home.module.css"
 import CartBrandSection from "../../components/Checkout/CartBrandSection"
-import fetch from 'isomorphic-fetch'
-
 
 export default function Cart({ data, location, pageContext }) {
 
@@ -40,20 +40,21 @@ export default function Cart({ data, location, pageContext }) {
       'cart' : cartDetails
     }
     console.log(payload)
+    console.log(url)
+    logOrder(payload)
 
     fetch(url, {
-    method: 'POST', 
-    mode: 'cors', 
-    headers: {
+    method : 'POST', 
+    mode : 'cors', 
+    headers : {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(payload)
-    }).then((response) => console.log(response)).catch(error => {
+    body : JSON.stringify(payload),
+    }).then(navigate(`/customer/${email}/order-confirmation`, {
+           state: { email }})
+    ).catch(error => {
                     throw(error);
                 })
-    //navigate(`/customer/${email}/order-confirmation`, {
-    //        state: { email },
-    //      })
   }
 
   return (

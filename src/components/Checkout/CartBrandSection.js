@@ -60,7 +60,7 @@ const CartBrandSection = ({ brand, pageContext }) => {
         .filter(key => cartDetails[key]["brand_id"] === brand.brand_id)
         .map(key => {
           return (
-            <div className={styles.brandcart__lineitem}>
+            <div key={key} className={styles.brandcart__lineitem}>
               <div className={styles.brandcart__lineitemimgcontainer}>
                 <img src={cartDetails[key]["image"]} />
               </div>

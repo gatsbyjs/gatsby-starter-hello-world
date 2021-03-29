@@ -4,9 +4,9 @@ const { logOrder } = require('./utils/airtable')
 const HEADER = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers' : 'Content-Type,X-XSRF-TOKEN,X-CSRF-TOKEN'}
 
 exports.handler = async (event, context, callback) => {
-
-	const order=JSON.parse(event.body)
-	resp=logOrder(order)
+	var resp;
+	let order=JSON.parse(event.body);
+	resp= await logOrder(order);
 	if (typeof resp !== 'undefined') {
 	sendBack = {
 		statusCode: 200,
@@ -23,9 +23,5 @@ exports.handler = async (event, context, callback) => {
 	}
 	return sendBack
 	}
-
-
-
-
 	
- }
+}

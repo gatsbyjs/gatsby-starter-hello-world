@@ -1,6 +1,8 @@
 const { ApolloServer, gql } = require('apollo-server-lambda')
 const { getAllProducts, addProduct, getProduct, getCustomer } = require('./utils/airtable')
 
+
+
 // Defines the types of products sent by graph QL
 const typeDefs = gql`
   type Product {

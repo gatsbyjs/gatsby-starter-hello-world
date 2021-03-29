@@ -1,5 +1,4 @@
 const Airtable = require('airtable')
-/** The next 2 lines refer to environment variables configured in Netlify settings (found in "Site settings > Build & deploy > Environment" as of this writing) */
 
 const { AIRTABLE_API_KEY } = process.env
 const { AIRTABLE_BASE_CUSTOMER_ID } = process.env
@@ -8,6 +7,8 @@ const at_base = new Airtable({
 	})
 	.base(AIRTABLE_BASE_CUSTOMER_ID)
 const at_table_products = at_base('customers')
+
+
 
 exports.handler = async (event, context, callback) => {
 	const qs_val_recid ='all'
