@@ -95,17 +95,17 @@
   margin: auto;
 }
 
-.brandcart__button {
+.brandcart__button_abovemin {
   max-width:200px;
   width:80%;
   height:50px;
   min-width: 60px;
   box-shadow:inset 0px 0px 0px 0px #37ff00;
-  background-color:#000000;
+  background-color:white;
   border:1px solid #000000;
   display:inline-block;
   cursor:pointer;
-  color:#ffffff;
+  color:black;
   font-family:Arial;
   font-size:14px;
   font-weight:bold;
@@ -113,11 +113,50 @@
   text-decoration:none;
   line-height: 1.1em;
 }
-.brandcart__button:hover {
-  background-color:#ffffff;
-  color:black;
+
+.brandcart__button_abovemin:hover {
+  background-color:black;
+  color:white;
 }
-.brandcart__button:active {
+.brandcart__button_abovemin:active {
+  position:relative;
+  top:1px;
+}
+
+.brandcart__button_abovemin .buttontext_hover { display: none; }
+.brandcart__button_abovemin:hover .buttontext { display: none; }
+.brandcart__button_abovemin:hover .buttontext_hover { display: inline; color:white; }
+
+.brandcart__button_belowmin {
+  max-width:200px;
+  width:80%;
+  height:50px;
+  min-width: 60px;
+  box-shadow:inset 0px 0px 0px 0px #37ff00;
+  background-color:#FFD5D4;
+  border:1px solid #000000;
+  display:inline-block;
+  cursor:pointer;
+  color:black;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  padding:5px 10px 5px 10px;
+  text-decoration:none;
+  line-height: 1.1em;
+}
+
+.brandcart__button_belowmin .buttontext_hover { display: none; }
+.brandcart__button_belowmin:hover .buttontext { display: none; }
+.brandcart__button_belowmin:hover .buttontext_hover { display: inline; color:white; }
+
+
+
+.brandcart__button_belowmin:hover {
+  background-color:black;
+  color:white;
+}
+.brandcart__button_belowmin:active {
   position:relative;
   top:1px;
 }

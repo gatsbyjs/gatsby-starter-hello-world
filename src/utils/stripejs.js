@@ -1,7 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js"
 
-const { STRIPE_PUBLISHABLE_KEY } = process.env
-
 let stripePromise
 
 const getStripe = () => {

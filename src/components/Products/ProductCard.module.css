@@ -2,6 +2,9 @@
 .productItem{
   border: solid 1px #EEEEEE;
   padding:5px 5px 5px 5px;
+  height:100%;
+  display: flex;
+  flex-flow: row wrap;
 
 }
 
@@ -37,5 +40,11 @@
 	object-fit: contain;
 }
 
-.qtypicker{
+.qtypickercontainer{
+  margin-top:5px;
+  width:100%;
+  vertical-align: bottom;
+  align:bottom;
+  display:block;
+  align-self: flex-end;
 }

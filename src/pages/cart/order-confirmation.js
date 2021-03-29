@@ -3,9 +3,10 @@ import React, { useState } from "react"
 import { useQuery } from "@apollo/client"
 import { gql } from "graphql-tag"
 
-import SimpleLayout from "../components/Layout/SimpleLayout"
-import * as styles from "./styles/home.module.css"
+import SimpleLayout from "../../components/Layout/SimpleLayout"
+import * as styles from "../styles/home.module.css"
 import { navigate } from "gatsby"
+
 
 export default function Home({ data, location, pageContext }) {
   const [useremail, setUseremail] = useState("")
@@ -40,27 +41,6 @@ export default function Home({ data, location, pageContext }) {
           }
     }
   }
-
-  const Form = () => (
-    <form>
-      <input
-        className={styles.signin__input}
-        type="text"
-        name="email"
-        value={useremail}
-        onChange={handleChange}
-      />
-      <br/>
-      <input
-        className={styles.order__button}
-        type="button"
-        value="Login"
-        onClick={handleClick}
-      /><br/>
-      <label className={styles.signin__error}>{errormessage}</label>
-    </form>
-  )
-
   return (
     <SimpleLayout location={location}>
       <div className="content-container">
@@ -68,7 +48,6 @@ export default function Home({ data, location, pageContext }) {
           <div className={styles.home_center_subcomponent}>
             <h1>Reorder in a breeze</h1>
             <p>Enter your account email address.</p>
-            {Form()}
           </div>
         </div>
       </div>

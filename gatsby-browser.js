@@ -9,10 +9,10 @@ import { ApolloProvider } from '@apollo/client';
 import fetch from 'isomorphic-fetch';
 const { GRAPHQL_URL } = process.env
 
-// Initiate Stripe promise
+// Initiate Stripe
 const stripePromise = getStripe()
 
-console.log(GRAPHQL_URL)
+console.log("GRAPHQL_URL: "+GRAPHQL_URL)
 // Initiate Apollo
   const client = new ApolloClient({
     uri: GRAPHQL_URL,

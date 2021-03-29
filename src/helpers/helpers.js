@@ -95,7 +95,15 @@ export const cartTotal = (cart) => {
 	}, 0)
 }
 
-
+// Sums the total price in the cart
+export const caseClean = (number) => {
+	if (number > 1) {
+		return "cases"
+	}
+	else {
+		return "case"
+	}
+}
 
 
 // const cart_product = {

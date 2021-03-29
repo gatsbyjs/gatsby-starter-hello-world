@@ -7,6 +7,7 @@ import {
   cartBrandShipping,
   cartBrandSubtotal,
   cartBrandTotal,
+  caseClean,
 } from "../../helpers/helpers"
 import { Link } from "gatsby"
 
@@ -40,11 +41,17 @@ const CartBrandSection = ({ brand, pageContext }) => {
         </div>
         <div className={styles.brandcart__headerbutton}>
           <Link to={`/customer/${email}/${brand.brand_id}`}>
-            <button className={styles.brandcart__button}>
-              {qitems >= brand.brand_mixmatch_moq
-                ? "Minimum Reached"
-                : `Add ${brand.brand_mixmatch_moq - qitems} cases to checkout`}
-            </button>
+            {qitems >= brand.brand_mixmatch_moq ? (
+              <button className={styles.brandcart__button_abovemin}>
+                <span className={styles.buttontext}> Minimum Reached</span>
+                <span className={styles.buttontext_hover}>Shop this brand</span>
+              </button>
+            ) : (
+              <button className={styles.brandcart__button_belowmin}>
+                <span className={styles.buttontext}>{brand.brand_mixmatch_moq - qitems} {caseClean(brand.brand_mixmatch_moq - qitems)} below min</span>
+                <span className={styles.buttontext_hover}>Shop this brand</span>
+              </button>
+            )}
           </Link>
         </div>
       </div>

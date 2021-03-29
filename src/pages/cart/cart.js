@@ -15,7 +15,12 @@ import {
 import * as styles from "../styles/home.module.css"
 import CartBrandSection from "../../components/Checkout/CartBrandSection"
 
+
+const { ORDER_URL } = process.env
+
+
 export default function Cart({ data, location, pageContext }) {
+
   const { cartDetails } = useShoppingCart()
 
   const brandMinimums = data.brands.edges.reduce((acc, cur) => {
@@ -41,7 +46,7 @@ export default function Cart({ data, location, pageContext }) {
           <span>
             {cartReady
               ? "All brand minimums are met. Your cart is ready to checkout."
-              : "Certain brands are below their minimums. Edit your cart to checkout."}
+              : "Certain brands are below their minimums. Edit your cart."}
           </span>
         </div>
 
@@ -99,7 +104,18 @@ export default function Cart({ data, location, pageContext }) {
           </div>
         </div>
         <div className={styles.order__buttoncontainer}>
-          <button className={styles.order__button} onClick={placeOrder} name="PLACE ORDER" value={cartDetails}>PLACE ORDER</button>
+          {cartReady ? 
+          (<button className={ styles.order__button} onClick={placeOrder} name="PLACE ORDER" value={cartDetails}>PLACE ORDER</button>)
+          :  (<button className={ styles.order__button__belowmin} name="PLACE ORDER" value={cartDetails}>CART BELOW MINIMUMS</button>)
+          }
+          <br/>
+          <span>
+          {cartReady
+              ?  (<i>Your cart is ready to checkout</i>)
+              :  (<i>Certain brands are below their acceptable minimums. Edit your cart to place your order</i>)
+          }
+            
+           </span>   
         </div>
       </div>
     </Layout>

@@ -1,13 +1,16 @@
 const Airtable = require('airtable')
 
-const { AIRTABLE_API_KEY, AIRTABLE_BASE_MERCHANDISING_ID, AIRTABLE_TABLE_PRODUCTS, AIRTABLE_BASE_CUSTOMER_ID, AIRTABLE_TABLE_CUSTOMERS } = process.env
+const { AIRTABLE_API_KEY, AIRTABLE_BASE_MERCHANDISING_ID,AIRTABLE_BASE_REORDER_ID, AIRTABLE_TABLE_PRODUCTS, AIRTABLE_BASE_CUSTOMER_ID, AIRTABLE_TABLE_CUSTOMERS, AIRTABLE_TABLE_REORDER_CUSTOMERS } = process.env
 
 const merch_base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_MERCHANDISING_ID)
 const cust_base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_CUSTOMER_ID)
+const reorder_base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_REORDER_ID)
 
 
 const product_table = merch_base(AIRTABLE_TABLE_PRODUCTS)
 const customer_table= cust_base(AIRTABLE_TABLE_CUSTOMERS)
+const reorder_table= cust_base(AIRTABLE_TABLE_REORDER_CUSTOMERS)
+
 
 const getAllProducts = async () => {
   const allProducts = await product_table.select({}).firstPage()
@@ -16,8 +19,6 @@ const getAllProducts = async () => {
 
 // Get an individual product
 const getProduct = async ({ id }) => {
-  console.log({id})
-  console.log('Ok')
   //for(var prop in id) {
   //console.log(prop,id[prop]); }
   const Product = await product_table.find(id)
@@ -40,6 +41,20 @@ const getCustomer = async ({ email }) => {
   }
 }
 
+
+// Get an individual product
+const logOrder = async ({ order }) => {
+  const newOrder = await reorder_table.create([
+  {
+    fields: {
+      email : order.email,
+      ordered_cart: order.cart,
+    }
+  }
+    ])
+  //console.log(Product)
+  return ProductTransformResponse(newOrder["id"])
+}
 
 
 const addProduct = async ({ product }) => {
@@ -72,4 +87,6 @@ exports.getAllProducts = getAllProducts
 exports.addProduct = addProduct
 exports.getProduct = getProduct
 exports.getCustomer = getCustomer
+exports.logOrder = logOrder
+
 

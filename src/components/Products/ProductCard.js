@@ -75,7 +75,7 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
       >
         WS {numeral(product.product_wholesale_price).format("$0,0.00")}
       </p>
-      <div className={pstyles.qtypicker}>
+      <div className={pstyles.qtypickercontainer}>
           <QtyPicker
             setPcount={setPcount}
             pcount={

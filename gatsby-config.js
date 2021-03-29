@@ -4,14 +4,13 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-// Sets the environment variable to test
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
 	siteMetadata: {
-	siteUrl: `http://localhost:8888/`,
+	siteUrl: `https://reorder.thegoodtrends.com/`,
     title: 'The Good Trends Reorder',
     description:
       'This site is to help customers reorder fast and successfully from THe Good Trends.'
