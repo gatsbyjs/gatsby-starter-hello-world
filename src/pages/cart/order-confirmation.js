@@ -46,8 +46,9 @@ export default function Home({ data, location, pageContext }) {
       <div className="content-container">
         <div className={styles.home_center_container}>
           <div className={styles.home_center_subcomponent}>
-            <h1>Reorder in a breeze</h1>
-            <p>Enter your account email address.</p>
+            <h1>Thank you for your order!</h1>
+            <p>Your order has been processed successfully. You will receive a confirmation of the order in your inbox shortly.</p>
+            
           </div>
         </div>
       </div>

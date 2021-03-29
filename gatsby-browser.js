@@ -7,15 +7,16 @@ import getStripe from "./src//utils/stripejs"
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/client';
 import fetch from 'isomorphic-fetch';
-const { GRAPHQL_URL } = process.env
+
+const gurl  = process.env.GRAPHQL_URL
 
 // Initiate Stripe
 const stripePromise = getStripe()
 
-console.log("GRAPHQL_URL: "+GRAPHQL_URL)
+console.log("GRAPHQL_URL: "+gurl)
 // Initiate Apollo
   const client = new ApolloClient({
-    uri: GRAPHQL_URL,
+    uri: gurl,
   })
 
 export const wrapRootElement = ({ element }) => {

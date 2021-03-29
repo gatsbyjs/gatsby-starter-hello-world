@@ -56,7 +56,6 @@ export const cartBrandTotal = (cart, brand_id) => {
 
 export const cartAboveMOQ = (cart, brandMinimums) => {
 	return Object.keys(brandMinimums).reduce((acc, cur) => {
-		console.log(brandMinimums[cur])
 		return (
 			acc &&
 			((cartBrandQty(cart, cur) >= brandMinimums[cur]) ||
@@ -90,12 +89,11 @@ export const cartShippingTotal = (cart) => {
 // Sums the total price in the cart
 export const cartTotal = (cart) => {
 	return Object.keys(cart).reduce((acc, cur) => {
-		console.log(cart[cur]["shipping"] + cart[cur]["price"])
 		return acc + (cart[cur]["shipping"] + cart[cur]["price"]) * cart[cur]["quantity"]
 	}, 0)
 }
 
-// Sums the total price in the cart
+// Returns 'case' with an s depending on plurality
 export const caseClean = (number) => {
 	if (number > 1) {
 		return "cases"
@@ -105,13 +103,9 @@ export const caseClean = (number) => {
 	}
 }
 
+// Returns a BigCommerce order payload based on cartDetails and customer id
+export const createPayload = (cart,customer_id) => {
+	""
+}
 
-// const cart_product = {
-//   name: product.name,
-//   sku: product.product_id,
-//   price: product.product_wholesale_price,
-//   currency: "USD",
-//   image: product.product_url_1,
-//   product_data: brand_id,
-//   price_data: product.product_average_local_shipping,
-// }
+

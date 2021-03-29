@@ -3,7 +3,7 @@ import numeral from "numeral"
 import { useShoppingCart } from "use-shopping-cart"
 import Layout from "../../components/Layout/Layout"
 import SEO from "../../components/seo"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import {
   cartAboveMOQ,
   brandsInCart,
@@ -14,14 +14,14 @@ import {
 
 import * as styles from "../styles/home.module.css"
 import CartBrandSection from "../../components/Checkout/CartBrandSection"
-
-
-const { ORDER_URL } = process.env
+import fetch from 'isomorphic-fetch'
 
 
 export default function Cart({ data, location, pageContext }) {
 
   const { cartDetails } = useShoppingCart()
+
+  const { email } = pageContext
 
   const brandMinimums = data.brands.edges.reduce((acc, cur) => {
     let key = { [cur.node.data.brand_id]: cur.node.data.brand_mixmatch_moq }
@@ -32,8 +32,28 @@ export default function Cart({ data, location, pageContext }) {
 
   const b_list = brandsInCart(cartDetails)
 
-  const placeOrder = () => {
-    ""
+  const placeOrder = async () => {
+    var url=process.env.ORDER_URL;
+    
+    let payload={
+      'email' : email,
+      'cart' : cartDetails
+    }
+    console.log(payload)
+
+    fetch(url, {
+    method: 'POST', 
+    mode: 'cors', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+    }).then((response) => console.log(response)).catch(error => {
+                    throw(error);
+                })
+    //navigate(`/customer/${email}/order-confirmation`, {
+    //        state: { email },
+    //      })
   }
 
   return (
@@ -105,8 +125,8 @@ export default function Cart({ data, location, pageContext }) {
         </div>
         <div className={styles.order__buttoncontainer}>
           {cartReady ? 
-          (<button className={ styles.order__button} onClick={placeOrder} name="PLACE ORDER" value={cartDetails}>PLACE ORDER</button>)
-          :  (<button className={ styles.order__button__belowmin} name="PLACE ORDER" value={cartDetails}>CART BELOW MINIMUMS</button>)
+          (<button className={ styles.order__button} onClick={placeOrder} value={cartDetails}>PLACE ORDER</button>)
+          :  (<button className={ styles.order__button__belowmin} value={cartDetails}>CART BELOW MINIMUMS</button>)
           }
           <br/>
           <span>

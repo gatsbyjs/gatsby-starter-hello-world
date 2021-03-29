@@ -11,11 +11,14 @@
     align-items: top;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 10px 0px 10px;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     background: white;
+    -moz-box-shadow:    0px 4px 1px 0px #ccc;
+    -webkit-box-shadow: 0px 4px 1px 0px #ccc;
+    box-shadow:         0px 4px 1px 0px #ccc;
 }
 
 

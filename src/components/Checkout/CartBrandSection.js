@@ -59,8 +59,6 @@ const CartBrandSection = ({ brand, pageContext }) => {
       {Object.keys(cartDetails)
         .filter(key => cartDetails[key]["brand_id"] === brand.brand_id)
         .map(key => {
-          console.log(key)
-          console.log(cartDetails)
           return (
             <div className={styles.brandcart__lineitem}>
               <div className={styles.brandcart__lineitemimgcontainer}>

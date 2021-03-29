@@ -52,7 +52,7 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
       }
     }
     else if (pcount === 1) {
-        console.log(prevPcount);
+        //console.log(prevPcount);
     }
 
     //console.log(cartDetails)
