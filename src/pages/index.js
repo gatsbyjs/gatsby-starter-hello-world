@@ -54,6 +54,7 @@ export default function Home({ data, location, pageContext }) {
         value={useremail}
         onChange={handleChange}
       />
+      <br/>
       <input
         className={styles.order__button}
         type="button"

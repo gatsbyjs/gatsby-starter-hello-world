@@ -12,16 +12,6 @@ const { GRAPHQL_URL } = process.env
 // Initiate Stripe promise
 const stripePromise = getStripe()
 
-// Initializes the Apollo Client
-export const query = graphql`
-  query PageQuery {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-  }
-`
 // Initiate Apollo
   const client = new ApolloClient({
     uri: GRAPHQL_URL,
