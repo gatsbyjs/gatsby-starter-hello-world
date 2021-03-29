@@ -11,6 +11,8 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import BrandCard from "../components/Brands/BrandCard"
 import * as styles from "./styles/home.module.css"
+import { cleanPhone } from "../helpers/helpers"
+
 
 export default function Home({ data, location, pageContext }) {
   const { email } = pageContext
@@ -26,24 +28,23 @@ export default function Home({ data, location, pageContext }) {
         </div>
       </div>
       <div className="content-container">
-        <div className={styles.home__about}>
-          <div>
-            <h2>Contact us.</h2>
-            <p>
-              If you need any help with your reorder, contact us at info@thegoodtrends.com
-            </p>
+        <div className={styles.home__advisorcontainer}>
+          <div className={styles.home__advisorimg}>
+            <img style={{borderRadius: `50%`}} src={data.customer.data.owner_picture[0].url}/>
           </div>
-        </div>
+          <div className={styles.home__advisortext}>
+            <h3>Hi! This is {data.customer.data.owner_first_name[0]}</h3>
+            <p>
+              If you need any help with your reorder - or need inspiration with additional curation - you can contact me anytime.
+            </p>
 
-        <div className={styles.home__about}>
-          <div>
-            <h2>Contact us.</h2>
-            <p>
-              If you need any help with your reorder, contact us at info@thegoodtrends.com
-            </p>
+          </div>
+          <div className={styles.home__advisorcta}>
+          <a href={`mailto:${data.customer.data.owner_email}`}><button className={styles.advisor__button}> TEXT ME</button></a>
+          <a href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>EMAIL ME</button></a>
+          </div>
           </div>
         </div>
-      </div>
 
     </Layout>
   )
@@ -62,6 +63,36 @@ export const query = graphql`
             brand_name
           }
         }
+      }
+    }
+    customer: airtable(
+      data: { email: { eq: $email } }
+      table: { eq: "customers" }
+    ) {
+      id
+      data {
+        email
+        brand_image_url
+        brand_mixmatch_moq
+        First_Name
+        Last_Name
+        Company
+        shipping_address1
+        shipping_address2
+        shipping_city
+        shipping_company
+        shipping_country
+        shipping_state_or_province
+        shipping_postal_code
+        payment_method
+        terms_day__from_terms_mapping_
+        owner_picture {
+          url
+        }
+        owner_first_name
+        owner_last_name
+        owner_phone
+        owner_email
       }
     }
   }

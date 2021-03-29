@@ -104,8 +104,8 @@ export const caseClean = (number) => {
 }
 
 // Returns a BigCommerce order payload based on cartDetails and customer id
-export const createPayload = (cart,customer_id) => {
-	""
+export const cleanPhone = (phone) => {
+	return "+1"+phone.replace("-","")
 }
 
 

@@ -7,19 +7,17 @@ root {
 }
 
 html {
-    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: 0;
     padding: 0;
 }
 
 a {
-    color: rgba(0,0,0, 0.85);
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 a:hover, a:focus {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 p, span {

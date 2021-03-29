@@ -32,6 +32,10 @@ export default function Cart({ data, location, pageContext }) {
 
   const b_list = brandsInCart(cartDetails)
 
+  const cartEmpty = (cartWholesaleTotal(cartDetails) == 0)
+
+  console.log(cartWholesaleTotal(cartDetails))
+
   const placeOrder = async () => {
     var url=process.env.GATSBY_ORDER_URL;
     
@@ -62,13 +66,13 @@ export default function Cart({ data, location, pageContext }) {
         
         <div className={styles.cart__summary}>
           <h1 className={styles.cart__summary_header}>Cart summary</h1>
-          <span>
-            {cartReady
-              ? "All brand minimums are met. Your cart is ready to checkout."
-              : "Certain brands are below their minimums. Edit your cart."}
-          </span>
         </div>
 
+        { cartEmpty ?
+        <div className={styles.cart__emptycart}>
+          <h1>Your cart is currently empty</h1>
+        </div> 
+        : 
         <div>
           {data.brands.edges
             .filter(edge => b_list.includes(edge.node.data.brand_id))
@@ -76,6 +80,7 @@ export default function Cart({ data, location, pageContext }) {
               return <CartBrandSection key={node.id} brand={{ ...node.data }} pageContext={pageContext} />
             })}
         </div>
+        }
 
         <div className={styles.order__summarycontainer}>
           <div className={styles.order__summaryshipping}>
@@ -122,6 +127,10 @@ export default function Cart({ data, location, pageContext }) {
             </p>
           </div>
         </div>
+
+        { cartEmpty ?
+          ""
+        :  
         <div className={styles.order__buttoncontainer}>
           {cartReady ? 
           (<button className={ styles.order__button} onClick={placeOrder} value={cartDetails}>PLACE ORDER</button>)
@@ -136,6 +145,8 @@ export default function Cart({ data, location, pageContext }) {
             
            </span>   
         </div>
+        }
+
       </div>
     </Layout>
   )
@@ -184,6 +195,7 @@ export const query = graphql`
         shipping_postal_code
         payment_method
         terms_day__from_terms_mapping_
+        
       }
     }
   }
