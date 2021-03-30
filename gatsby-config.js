@@ -110,8 +110,6 @@ module.exports = {
 			  // Requires for cart management
 			  '@stripe/stripe-js',
 			  'use-shopping-cart',
-			  'crypto',
-			  'crypto-browserify',
 			  '@emotion/react',
 			  // Sets manifest to add to mobile https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest
 			  {

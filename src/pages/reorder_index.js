@@ -27,7 +27,7 @@ export default function Home({ data, location, pageContext }) {
           })}
         </div>
       </div>
-      <div className="content-container">
+      <div className="content_container">
         <div className={styles.home__advisorcontainer}>
           <div className={styles.home__advisorimg}>
             <img style={{borderRadius: `50%`}} src={data.customer.data.owner_picture[0].url}/>
@@ -40,11 +40,11 @@ export default function Home({ data, location, pageContext }) {
 
           </div>
           <div className={styles.home__advisorcta}>
-          <a href={`mailto:${data.customer.data.owner_email}`}><button className={styles.advisor__button}> TEXT ME</button></a>
-          <a href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>EMAIL ME</button></a>
+          <a href={`mailto:${data.customer.data.owner_email}`}><button className={styles.advisor__button}>EMAIL ME</button></a>
+          <a href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>TEXT ME</button></a>
           </div>
           </div>
-        </div>
+      </div>
 
     </Layout>
   )

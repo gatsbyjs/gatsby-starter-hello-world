@@ -12,12 +12,10 @@ html {
     padding: 0;
 }
 
-a {
-    text-decoration: none !important;
-}
 
-a:hover, a:focus {
-    text-decoration: none !important;
+a, a:hover, a:focus {
+  text-shadow: none;
+  background-image: none;
 }
 
 p, span {

@@ -147,6 +147,23 @@ export default function Cart({ data, location, pageContext }) {
         </div>
         }
 
+        <div className={styles.home__advisorcartcontainer}>
+          <div className={styles.home__advisorimg}>
+            <img style={{borderRadius: `50%`}} src={data.customer.data.owner_picture[0].url}/>
+          </div>
+          <div className={styles.home__advisortext}>
+            <h3>This is {data.customer.data.owner_first_name[0]} again.</h3>
+            <p>
+              Let me know if you need support with your order, I'd be happy to help.
+            </p>
+
+          </div>
+          <div className={styles.home__advisorcta}>
+          <a href={`mailto:${data.customer.data.owner_email}`}><button className={styles.advisor__button}>EMAIL ME</button></a>
+          <a href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>TEXT ME</button></a>
+          </div>
+          </div>
+
       </div>
     </Layout>
   )
@@ -195,7 +212,13 @@ export const query = graphql`
         shipping_postal_code
         payment_method
         terms_day__from_terms_mapping_
-        
+        owner_picture {
+          url
+        }
+        owner_first_name
+        owner_last_name
+        owner_phone
+        owner_email
       }
     }
   }

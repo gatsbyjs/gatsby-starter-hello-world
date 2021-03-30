@@ -1,6 +1,10 @@
 .content_container{
+  padding: 0px 5px 0px 5px;
 }
 
+a, a:hover, a:focus {
+    text-decoration: none !important;
+}
 
 .home__cta {
     align-items: flex-end;
@@ -276,9 +280,9 @@
 
 .signin__input{
   height:50px;
-  width: 250px;
+  width: 300px;
   border:1px solid grey;
-  padding:5px 5px 5px 5px;
+  padding:10px 10px 10px 10px;
   margin:20px 0px 20px 0px;
 
 }
@@ -293,8 +297,15 @@
   align-content: top;
   width:100%;
   padding: 0px 5px 0px 5px;
-  bording-top: 1px solid #000000;
+  border-top: 1px solid #F0F0F0;
   margin-top: 30px;
+}
+
+.home__advisorcartcontainer{
+  align-content: top;
+  width:100%;
+  padding: 0px 5px 0px 5px;
+  border-bottom: 1px solid #F0F0F0;
 }
 
 .home__advisorimg{
@@ -312,7 +323,10 @@
   display: inline-block;
   width:100%;
   vertical-align: top;
+  align-content: center;
   padding-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1000px) {
@@ -333,6 +347,7 @@
   vertical-align: top;
   align-content: center;
   padding-top: 30px;
+  justify-content: center;
   }
 
 }
