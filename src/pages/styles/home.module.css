@@ -90,7 +90,7 @@ a, a:hover, a:focus {
 .brand_summary_container {
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 6.55em;
+  top: 5.7em;
   background: #F0F0F0;
   padding: 5px 10px 5px 10px;
   border: black;

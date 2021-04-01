@@ -219,6 +219,11 @@ export const query = graphql`
         owner_last_name
         owner_phone
         owner_email
+        card_expiry_month
+        card_expiry_year
+        card_last4
+        card_type
+
       }
     }
   }

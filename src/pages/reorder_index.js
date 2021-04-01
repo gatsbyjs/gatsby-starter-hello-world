@@ -11,8 +11,6 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import BrandCard from "../components/Brands/BrandCard"
 import * as styles from "./styles/home.module.css"
-import { cleanPhone } from "../helpers/helpers"
-
 
 export default function Home({ data, location, pageContext }) {
   const { email } = pageContext

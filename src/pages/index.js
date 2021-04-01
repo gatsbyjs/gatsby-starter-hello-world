@@ -6,10 +6,13 @@ import { gql } from "graphql-tag"
 import SimpleLayout from "../components/Layout/SimpleLayout"
 import * as styles from "./styles/home.module.css"
 import { navigate } from "gatsby"
+import { usePWAInstall } from 'react-use-pwa-install'
+
 
 export default function Home({ data, location, pageContext }) {
   const [useremail, setUseremail] = useState("")
   const [errormessage, setErrormessage] = useState("")
+  const install = usePWAInstall()
 
   const GETCUSTOMER = gql`
     query($email: String!) {
@@ -27,7 +30,7 @@ export default function Home({ data, location, pageContext }) {
   })
 
   const handleChange = e => {
-    setUseremail(e.target.value)
+    setUseremail(e.target.value.toLowerCase())
   }
 
   const handleClick = () => {
@@ -66,9 +69,12 @@ export default function Home({ data, location, pageContext }) {
       <div className="content-container">
         <div className={styles.home_center_container}>
           <div className={styles.home_center_subcomponent}>
-            <h1>Reorder in a breeze</h1>
+            <h1>Reorder fast and efficiently!</h1>
             <p>Enter your account email address.</p>
             {Form()}
+          </div>
+          <div>
+          {install && <button className={styles.order__button}  onClick={install}>Add to Home Screen</button>}
           </div>
         </div>
       </div>

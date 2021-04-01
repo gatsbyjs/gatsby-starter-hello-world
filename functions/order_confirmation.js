@@ -1,4 +1,6 @@
 
+
+
 const { logOrder } = require('./utils/airtable')
 
 const HEADER = {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers' : 'Content-Type,X-XSRF-TOKEN,X-CSRF-TOKEN'}
@@ -20,7 +22,7 @@ exports.handler = async (event, context, callback) => {
 	}	
 	
 	/* Create the cart */
-	
+
 
 
 

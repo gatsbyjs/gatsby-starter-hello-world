@@ -6,6 +6,7 @@ import logo from "./images/logo.png"
 import numeral from "numeral"
 import { cartWholesaleTotal, cartQtyTotal } from "../../helpers/helpers"
 import {useSpring, animated} from 'react-spring'
+import Totals from "./Totals"
 
 export default function Layout({ children, location, pageContext }) {
 	const path = location.pathname;
@@ -62,14 +63,10 @@ export default function Layout({ children, location, pageContext }) {
 					<div>
 						<Link to={`/customer/${email}/cart`}>
 							<h4 className={styles.layout__headerText_right}>Cart</h4>
-							<span style={{ fontSize: `0.8em` }}>
-							<animated.span style={props}>
-								{cartWholesaleTotal(cartDetails) != 0 &&
-									`Total ${numeral(cartWholesaleTotal(cartDetails)).format(
-										"$0,0.00"
-									)} | ${cartQtyTotal(cartDetails)} cases`}
-							</animated.span>
-							</span>
+							<Totals 
+							wholesale={cartWholesaleTotal(cartDetails)}
+							units={cartQtyTotal(cartDetails)}
+							/>
 						</Link>
 					</div>
 				</div>

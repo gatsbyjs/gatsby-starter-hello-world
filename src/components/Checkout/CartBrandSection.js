@@ -67,7 +67,7 @@ const CartBrandSection = ({ brand, pageContext }) => {
               <div className={styles.brandcart__lineitemleft}>
                 <p>{`${cartDetails[key]["name"]}`}</p>
                 <span style={{ color: `grey` }}>
-                  {`Qty: ${cartDetails[key]["quantity"]}`} cases{" "}
+                  {`Qty: ${cartDetails[key]["quantity"]} ${caseClean(cartDetails[key]["quantity"])}`}
                 </span>
               </div>
               <div className={styles.brandcart__lineitemright}>
