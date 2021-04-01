@@ -15,7 +15,7 @@ const changed=(wholesale != prevWS)
 
 const props = useSpring({
   to: async (next, cancel) => {
-    await next({opacity: 1, color: '#ff5757',delay:1,fontWeight: 'bold',fontSize: '1.2em'})
+    await next({opacity: 1, color: '#ff5757',fontWeight: 'bold',fontSize: '1.2em'})
     await next({opacity: 1, color: 'rgb(14,26,19)',fontWeight: 'normal',fontSize: '1em'})
   }})
 

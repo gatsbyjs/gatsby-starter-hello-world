@@ -95,8 +95,11 @@ export default function Cart({ data, location, pageContext }) {
           <div className={styles.order__summarypayment}>
             <h2>Payment Terms</h2>
             <span>Your payment terms are {data.customer.data.terms_day__from_terms_mapping_[0]} days<br/>
-                Payment by {data.customer.data.payment_method[0]}s
-
+                Payment by {data.customer.data.payment_method[0]}<br/>
+                {(data.customer.data.payment_method[0] == 'Credit Card') 
+              ? `${data.customer.data.card_type.toUpperCase()} **${data.customer.data.card_last4} Exp ${data.customer.data.card_expiry_month}/${data.customer.data.card_expiry_year}`
+              : ""
+              }
             </span>
           </div>
           <div className={styles.order__summarytotals}>

@@ -6,7 +6,6 @@ import { gql } from "graphql-tag"
 import SimpleLayout from "../components/Layout/SimpleLayout"
 import * as styles from "./styles/home.module.css"
 import { navigate } from "gatsby"
-import AddToHomeScreen from '@ideasio/add-to-homescreen-react';
 
 
 export default function Home({ data, location, pageContext }) {
@@ -71,9 +70,6 @@ export default function Home({ data, location, pageContext }) {
             <h1>Reorder fast and efficiently</h1>
             <p>Enter your account email address.</p>
             {Form()}
-          </div>
-          <div className={styles.home_center_subcomponent}>
-            <AddToHomeScreen />
           </div>
         </div>
       </div>
