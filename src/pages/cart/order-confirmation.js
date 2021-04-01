@@ -9,8 +9,6 @@ import { navigate } from "gatsby"
 
 
 export default function Home({ data, location, pageContext }) {
-  const [useremail, setUseremail] = useState("")
-  const [errormessage, setErrormessage] = useState("")
 
   return (
     <SimpleLayout location={location}>

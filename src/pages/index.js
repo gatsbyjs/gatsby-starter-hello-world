@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 
 import { useQuery } from "@apollo/client"
 import { gql } from "graphql-tag"
@@ -6,13 +6,12 @@ import { gql } from "graphql-tag"
 import SimpleLayout from "../components/Layout/SimpleLayout"
 import * as styles from "./styles/home.module.css"
 import { navigate } from "gatsby"
-import { usePWAInstall } from 'react-use-pwa-install'
+import AddToHomeScreen from '@ideasio/add-to-homescreen-react';
 
 
 export default function Home({ data, location, pageContext }) {
   const [useremail, setUseremail] = useState("")
   const [errormessage, setErrormessage] = useState("")
-  const install = usePWAInstall()
 
   const GETCUSTOMER = gql`
     query($email: String!) {
@@ -69,12 +68,12 @@ export default function Home({ data, location, pageContext }) {
       <div className="content-container">
         <div className={styles.home_center_container}>
           <div className={styles.home_center_subcomponent}>
-            <h1>Reorder fast and efficiently!</h1>
+            <h1>Reorder fast and efficiently</h1>
             <p>Enter your account email address.</p>
             {Form()}
           </div>
-          <div>
-          {install && <button className={styles.order__button}  onClick={install}>Add to Home Screen</button>}
+          <div className={styles.home_center_subcomponent}>
+            <AddToHomeScreen />
           </div>
         </div>
       </div>

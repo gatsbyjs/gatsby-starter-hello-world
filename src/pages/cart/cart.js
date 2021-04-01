@@ -95,7 +95,7 @@ export default function Cart({ data, location, pageContext }) {
           <div className={styles.order__summarypayment}>
             <h2>Payment Terms</h2>
             <span>Your payment terms are {data.customer.data.terms_day__from_terms_mapping_[0]} days<br/>
-                Payment by {data.customer.data.payment_method[0]}
+                Payment by {data.customer.data.payment_method[0]}s
 
             </span>
           </div>

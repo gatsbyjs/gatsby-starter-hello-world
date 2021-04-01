@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "tgt-reorder",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
@@ -17,6 +17,7 @@
     "@apollo/react-hooks": "^4.0.0",
     "@emotion/react": "^11.1.5",
     "@graphile-contrib/pg-simplify-inflector": "^6.1.0",
+    "@ideasio/add-to-homescreen-react": "^1.0.7",
     "@stripe/stripe-js": "^1.13.1",
     "airtable": "^0.10.1",
     "apollo-boost": "^0.4.9",
@@ -61,7 +62,6 @@
     "react-spring": "^9.0.0",
     "react-tabs": "^3.2.1",
     "react-typography": "^0.16.19",
-    "react-use-pwa-install": "^0.1.0",
     "sass": "^1.32.8",
     "touch": "^3.1.0",
     "typescript": "^4.2.3",
