@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 
 import { useQuery } from "@apollo/client"
 import { gql } from "graphql-tag"
@@ -6,11 +6,14 @@ import { gql } from "graphql-tag"
 import SimpleLayout from "../components/Layout/SimpleLayout"
 import * as styles from "./styles/home.module.css"
 import { navigate } from "gatsby"
+import AddToHomeScreen from 'gatsby-plugin-pwainstall'
+
 
 
 export default function Home({ data, location, pageContext }) {
   const [useremail, setUseremail] = useState("")
   const [errormessage, setErrormessage] = useState("")
+  const [isloggedin,setIsloggedin]=useState(false)
 
   const GETCUSTOMER = gql`
     query($email: String!) {
@@ -34,6 +37,7 @@ export default function Home({ data, location, pageContext }) {
   const handleClick = () => {
     if (typeof results.data !== 'undefined') {
         if (useremail !== "" && results.data.getCustomer) {
+          setIsloggedin(true)
           navigate(`/customer/${useremail}`, {
             state: { useremail },
           })} else {
@@ -42,6 +46,13 @@ export default function Home({ data, location, pageContext }) {
     }
   }
 
+  useEffect(() => {
+    if (isloggedin) {
+      navigate(`/customer/${useremail}`, {
+            state: { useremail },
+      })}
+      },[])
+  
   const Form = () => (
     <form>
       <input
@@ -70,6 +81,11 @@ export default function Home({ data, location, pageContext }) {
             <h1>Reorder fast and efficiently</h1>
             <p>Enter your account email address.</p>
             {Form()}
+          </div>
+          <div className={styles.home_center_subcomponent}>
+            <AddToHomeScreen suspend='2' acceptedUri='/' dismmissedUri='/'>
+                Install Our App
+            </AddToHomeScreen>
           </div>
         </div>
       </div>

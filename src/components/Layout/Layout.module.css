@@ -1,3 +1,4 @@
+
 .layout {
    margin: 0 auto; 
    width: 100%;
@@ -19,25 +20,26 @@
     -moz-box-shadow:    0px 4px 1px 0px #ccc;
     -webkit-box-shadow: 0px 4px 1px 0px #ccc;
     box-shadow:         0px 4px 1px 0px #ccc;
+    height:100%;
 }
 
 
 .layout__headerleft{
     vertical-align: top;
-    display: block;
-    padding-top:10px;
     display: flex;
     width: 33%;
     justify-content: left;
     align-content: top;
+    height:100%;
 }
 
 .layout__headerright{
     position: top;
-    padding-top:20px;
     display: flex;
     width: 33%;
     justify-content: right;
+    height:100%;
+    align-content: top;
 }
 
 .layout__headerLogo {

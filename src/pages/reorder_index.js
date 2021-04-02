@@ -13,44 +13,109 @@ import BrandCard from "../components/Brands/BrandCard"
 import * as styles from "./styles/home.module.css"
 
 export default function Home({ data, location, pageContext }) {
+  
   const { email } = pageContext
+
+  const p_list = data.ordered_brands.edges.reduce((acc, cur) => {
+    return acc.concat([cur.node.data.product_id])
+  }, [])
+
+
   return (
     <Layout location={location} pageContext={pageContext}>
-      <SEO title="Reorder | The Good Trends" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="Reorder | The Good Trends"
+        keywords={[`gatsby`, `application`, `react`]}
+      />
+      <div className={styles.home__cta}>
+        <div className={styles.home__ctaText}>
+          <h2 style={{ margin: `0px`, fontSize: "2em" }}>
+            Enjoy Free shipping on all orders in April
+          </h2>
+        </div>
+      </div>
       <div className="content-container">
         <h1> Reorder from your previous orders </h1>
         <div className={styles.home__contentGrid}>
-          {data.allAirtable.edges.map(({ node }) => {
-            return <BrandCard key={node.id} brand={{ ...node.data }} email={email} />
+          {data.ordered_brands.edges.map(({ node }) => {
+            return (
+              <BrandCard key={node.id} brand={{ ...node.data }} email={email} />
+            )
           })}
         </div>
       </div>
       <div className="content_container">
         <div className={styles.home__advisorcontainer}>
           <div className={styles.home__advisorimg}>
-            <img style={{borderRadius: `50%`}} src={data.customer.data.owner_picture[0].url}/>
+            <img
+              style={{ borderRadius: `50%` }}
+              src={data.customer.data.owner_picture[0].url}
+            />
           </div>
           <div className={styles.home__advisortext}>
             <h3>Hi! This is {data.customer.data.owner_first_name[0]}</h3>
             <p>
-              If you need any help with your reorder - or need inspiration with additional curation - you can contact me anytime.
+              If you need any help with your reorder - or need inspiration with
+              additional curation - you can contact me anytime.
             </p>
-
           </div>
           <div className={styles.home__advisorcta}>
-          <a href={`mailto:${data.customer.data.owner_email}`}><button className={styles.advisor__button}>EMAIL ME</button></a>
-          <a href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>TEXT ME</button></a>
+            <a href={`mailto:${data.customer.data.owner_email}`}>
+              <button className={styles.advisor__button}>EMAIL ME</button>
+            </a>
+            <a
+              href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}
+            >
+              <button className={styles.advisor__button}>TEXT ME</button>
+            </a>
           </div>
-          </div>
+        </div>
       </div>
 
+      <div className="content-container">
+        <h1> Stock for summer </h1>
+        <div className={styles.home__contentGrid}>
+          {data.featured_brands.edges
+            .filter(edge => !(p_list.includes(edge.node.data.brand_id)))
+            .map(({ node }) => {
+            return (
+              <BrandCard key={node.id} brand={{ ...node.data }} email={email} />
+            )
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query($email: String) {
-    allAirtable(filter: { table: { eq: "ordered_brands" }, data: {email: {eq: $email}}}, limit: 50) {
+    ordered_brands: allAirtable(
+      filter: {
+        table: { eq: "ordered_brands" }
+        data: { email: { eq: $email } }
+      }
+      limit: 50
+    ) {
+      edges {
+        node {
+          id
+          data {
+            email
+            brand_id
+            brand_image_url
+            brand_name
+          }
+        }
+      }
+    }
+    featured_brands: allAirtable(
+      filter: {
+        table: { eq: "brand_catalog" }
+        data: { is_featured_on_app: { eq: "Yes" } }
+      }
+      limit: 50
+    ) {
       edges {
         node {
           id

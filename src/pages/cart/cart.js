@@ -108,7 +108,7 @@ export default function Cart({ data, location, pageContext }) {
               <span>
                 <b>Subtotal</b>
               </span>
-              <span style={{float:`right`}}>
+              <span style={{float:`right`,fontStyle:`bold`}}>
                 {" "}
                 {numeral(cartWholesaleTotal(cartDetails)).format("$0,0.00")}
               </span>
@@ -119,14 +119,14 @@ export default function Cart({ data, location, pageContext }) {
               </span>
               <span style={{float:`right`}}>
               {" "}
-                {numeral(cartShippingTotal(cartDetails)).format("$0,0.00")}
+                <strike>{numeral(cartShippingTotal(cartDetails)).format("$0,0.00")}</strike>   $0
               </span>
             </p>
             <p>
               <span>
                 <b>Total</b>
               </span>
-              <span style={{float:`right`}}>{" "}{numeral(cartTotal(cartDetails)).format("$0,0.00")}</span>
+              <span style={{float:`right`,fontStyle:`bold`}}>{" "}{numeral(cartWholesaleTotal(cartDetails)).format("$0,0.00")}</span>
             </p>
           </div>
         </div>

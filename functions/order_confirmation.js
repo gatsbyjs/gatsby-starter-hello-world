@@ -12,16 +12,21 @@ exports.handler = async (event, context, callback) => {
 	resp= await logOrder(order);
 	/* -- Order is saved in AT --*/
 	if (typeof resp !== 'undefined') {
-	
-	sendBack = {
-		statusCode: 200,
-		headers: HEADER,
-		body: JSON.stringify(resp)
-	}
-	return sendBack
-	}	
-	
-	/* Create the cart */
+		
+
+
+
+
+
+		sendBack = {
+			statusCode: 200,
+			headers: HEADER,
+			body: JSON.stringify(resp)
+		}
+		return sendBack
+		}	
+		
+		/* Create the cart */
 
 
 

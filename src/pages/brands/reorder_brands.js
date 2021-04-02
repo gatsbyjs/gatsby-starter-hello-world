@@ -39,7 +39,8 @@ export default function Home({ data, location, pageContext }) {
 
       <div className={styles.content_container}>
         <div className={styles.home__header_sub_menu}>
-          <h2>Previous orders from {`${data.brand.data.brand_name}`}</h2>
+          <h2 style={{marginBottom:`0px`}}>Previous orders from {`${data.brand.data.brand_name}`}</h2>
+          <span style={{fontColor: `grey`}}>{`${data.brand.data.title}`}</span>
         </div>
         <div className={styles.home__contentGrid}>
           {data.all_ordered_products.edges.map(({ node }) => {
@@ -127,6 +128,7 @@ export const query = graphql`
         brand_name
         brand_image_url
         brand_mixmatch_moq
+        title
       }
     }
   }
