@@ -114,7 +114,7 @@ export const query = graphql`
         table: { eq: "brand_catalog" }
         data: { is_featured_on_app: { eq: "Yes" } }
       }
-      limit: 50
+      limit: 100
     ) {
       edges {
         node {
