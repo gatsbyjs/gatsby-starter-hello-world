@@ -32,7 +32,6 @@
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-modal-routing": "^1.2.0",
     "gatsby-plugin-offline": "^4.0.0",
-    "gatsby-plugin-pwainstall": "^1.1.2",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sass": "^4.1.0",
     "gatsby-plugin-sharp": "^3.0.1",
