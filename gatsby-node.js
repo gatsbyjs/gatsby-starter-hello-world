@@ -81,8 +81,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 exports.onCreatePage = async ({ page, actions}) => {
     //page.path matches with regex pattern: start with '/dashboard'
-    if (page.path.match(/^\/dashboard/) {
-        page.matchPath = '/dashboard/*' // page.matchPath is used for matching pages only on client side
+    if (page.path.match(/^\/brandselection/)) {
+        page.matchPath = '/brandselection/*' // page.matchPath is used for matching pages only on client side
         createPage(page)
     }
 }

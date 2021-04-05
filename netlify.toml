@@ -6,3 +6,10 @@
     [headers.values]
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Headers = "Content-Type,Authorization,X-Requested-With,X-CSRF-Token,X-XSRF-Token"
+
+
+[[redirects]]
+  from = "/brandselection/*"
+  to = "/brandselection"
+  status = 200
+  force = true
