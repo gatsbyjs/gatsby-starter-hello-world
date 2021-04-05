@@ -13,7 +13,7 @@ module.exports = {
 	siteUrl: `https://reorder.thegoodtrends.com/`,
     title: 'The Good Trends Reorder',
     description:
-      'This site is to help customers reorder fast and successfully from THe Good Trends.'
+      'This site is to help customers reorder fast and efficiently from The Good Trends.'
   	},
   	// Plugins starting with datasources
 	plugins: [{

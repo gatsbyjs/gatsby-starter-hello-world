@@ -35,7 +35,7 @@ export default function Layout({ children, location, email, brand_id }) {
 							!location.pathname.includes("cart")
 						) && (
 							<Link to={`/customer/${email}`} style={{ align: `left` }}>
-								<h4 className={styles.layout__headerText}>&#60; Brands</h4>
+								<h5 className={styles.layout__headerText}>&#60; Brands</h5>
 							</Link>
 						)}
 					</div>
@@ -60,7 +60,7 @@ export default function Layout({ children, location, email, brand_id }) {
 				>
 					<div>
 						<Link to={`/customer/${email}/cart`}>
-							<h4 className={styles.layout__headerText_right}>Cart</h4>
+							<h5 className={styles.layout__headerText_right}>Cart</h5>
 							<Totals 
 							wholesale={cartWholesaleTotal(cartDetails)}
 							units={cartQtyTotal(cartDetails)}
@@ -69,7 +69,7 @@ export default function Layout({ children, location, email, brand_id }) {
 					</div>
 				</div>
 			</header>
-			<div style={{ margin: `0 auto`, maxWidth: 1200, padding: `0 0rem` }}>
+			<div style={{ margin: `0 auto`, maxWidth: 1200, padding: `0px 5px 0px 5px` }}>
 				{children}
 			</div>
 		</div>

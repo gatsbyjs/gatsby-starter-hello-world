@@ -10,6 +10,6 @@
 
 [[redirects]]
   from = "/brandselection/*"
-  to = "/brandselection/"
+  to = "/brandselection"
   status = 200
   force = true

@@ -7,12 +7,12 @@ a, a:hover, a:focus {
 }
 
 .home__cta {
+    display: flex;
     align-items: center;
     background: url('../images/home_cta_background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    display: flex;
     height: 70vh;
     justify-content: center;
     max-height: 300px;
@@ -41,12 +41,6 @@ a, a:hover, a:focus {
 @media screen and (min-width: 1000px) {
     .layout {
         max-width: 1000px;
-    }
-    .home__cta {
-        align-items: flex-start;
-        background-position: center;
-        flex-direction: column;
-        padding-left: 50%;
     }
 
     .home__contentGrid {

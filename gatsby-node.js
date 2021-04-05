@@ -26,6 +26,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      customers: allAirtable(filter: {table: {eq: "reorders"}}) {
+        edges {
+          node {
+            data {
+              email
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -35,7 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  results.data.ordered_brands.edges.forEach(({ node }) => {
+  results.data.customers.edges.forEach(({ node }) => {
     createPage({
       path: 'customer/'+node.data.email,
       component: path.resolve(`./src/pages/reorder_index.js`),
@@ -56,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
   
-  results.data.ordered_brands.edges.forEach(({ node }) => {
+  results.data.customers.edges.forEach(({ node }) => {
     createPage({
       path: 'customer/'+node.data.email+'/cart',
       component: path.resolve(`./src/pages/cart/cart.js`),
@@ -66,7 +75,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  results.data.ordered_brands.edges.forEach(({ node }) => {
+  results.data.customers.edges.forEach(({ node }) => {
     createPage({
       path: 'customer/'+node.data.email+'/order-confirmation',
       component: path.resolve(`./src/pages/cart/order-confirmation.js`),
@@ -76,15 +85,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-}
-
-
-exports.onCreatePage = async ({ page, actions}) => {
-    //page.path matches with regex pattern: start with '/dashboard'
-    if (page.path.match(/^\/brandselection/)) {
-        page.matchPath = '/brandselection/*' // page.matchPath is used for matching pages only on client side
-        createPage(page)
-    }
 }
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {

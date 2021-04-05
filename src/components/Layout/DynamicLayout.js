@@ -64,7 +64,7 @@ export default function DynamicLayout({ children, location, email, brand }) {
 					</div>
 				</div>
 			</header>
-			<div style={{ margin: `0 auto`, maxWidth: 1200, padding: `0 0rem` }}>
+			<div style={{ margin: `0 auto`, maxWidth: 1200, padding: `0px 5px 0px 5px` }}>
 				{children}
 			</div>
 		</div>
