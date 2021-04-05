@@ -60,7 +60,7 @@ const BrandList = ({ location, brand, email, pageContext }) => {
           <span style={{fontColor: `grey`}}>{`${brand.title}`}</span>
         </div>
         { loading 
-        ? Loading...//<CircleLoading color="#ff5757" />
+        ? <div>Loading...</div> //<CircleLoading color="#ff5757" />
         :
         <div className={styles.home__contentGrid}>
           {data.brand_products.map((node) => {
