@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Router } from "@reach/router"
-import { BrandList } from "../../components/Brands/BrandList"
+import BrandList from "../../components/Brands/BrandList"
 import Layout from "../../components/Layout/Layout"
 
 
