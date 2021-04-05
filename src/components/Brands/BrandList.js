@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import { CircleLoading } from 'react-loadingg'
+//import { CircleLoading } from 'react-loadingg'
 import ProductCard from "../Products/ProductCard"
 import { useShoppingCart } from "use-shopping-cart"
 import { gql } from "graphql-tag"
@@ -60,7 +60,7 @@ const BrandList = ({ location, brand, email, pageContext }) => {
           <span style={{fontColor: `grey`}}>{`${brand.title}`}</span>
         </div>
         { loading 
-        ? <CircleLoading color="#ff5757" />
+        ? Loading...//<CircleLoading color="#ff5757" />
         :
         <div className={styles.home__contentGrid}>
           {data.brand_products.map((node) => {
