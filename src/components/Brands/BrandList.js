@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
+import { CircleLoading } from 'react-loadingg'
 import ProductCard from "../Products/ProductCard"
-import * as styles from "../../pages/styles/home.module.css"
 import { useShoppingCart } from "use-shopping-cart"
 import { gql } from "graphql-tag"
 import { useQuery } from "@apollo/client"
-import { CircleLoading } from 'react-loadingg';
+
+import * as styles from "../../pages/styles/home.module.css"
 
 
 const BrandList = ({ location, brand, email, pageContext }) => {
@@ -17,7 +18,7 @@ const BrandList = ({ location, brand, email, pageContext }) => {
 
   const [casecount, setCasecount] = useState(qitems)
 
-  // Queries to get the brand object
+  // Queries to get the brand products object
   const GETBRAND = gql`
     query($brand_id: String!) {
       brand_products: getBrandProducts(brand_id: $brand_id){
@@ -39,11 +40,8 @@ const BrandList = ({ location, brand, email, pageContext }) => {
 
   const meetmin=(casecount >= brand.brand_mixmatch_moq)
 
-  // Queries to get the product list object
-
-
   return (
-    <>
+    <div>
       <div className={styles.brand_summary_container}>
         <div className={styles.brand_center_header}>
         <div className={styles.brand_left_container}>
@@ -79,7 +77,7 @@ const BrandList = ({ location, brand, email, pageContext }) => {
         </div>
       }
     </div>
-  </>
+  </div>
   )
 }
 
