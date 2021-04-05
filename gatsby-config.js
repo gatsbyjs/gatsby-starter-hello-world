@@ -23,7 +23,13 @@ module.exports = {
 		        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
 		        downloadFiles: false,
 		      },
-		    },	
+		    },
+		    // Required for dynamic app paths to limit SSR
+		    {
+		      resolve: `gatsby-plugin-create-client-paths`,
+		      options: { prefixes: [`/brandselection/*`] },
+		    },
+		    // Required for data
 			{
 		    resolve: `gatsby-source-airtable`,
 		    options: {
@@ -90,7 +96,7 @@ module.exports = {
 			  'gatsby-plugin-emotion',
 			  'gatsby-plugin-react-helmet',
 			  {
-			      resolve: `gatsby-plugin-typography`,
+		      resolve: `gatsby-plugin-typography`,
 			      options: {
 			      pathToConfigModule: `src/utils/typography`,
 			      },
@@ -107,10 +113,12 @@ module.exports = {
 			    //     modalProps: { },
 			    //   }
 			    // },
-			  // Requires for cart management
+		  		
+		  	   // Requires for cart management
 			  '@stripe/stripe-js',
 			  'use-shopping-cart',
 			  '@emotion/react',
+			  
 			  // Sets manifest to add to mobile https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest
 			  {
 		      resolve: `gatsby-plugin-manifest`,
