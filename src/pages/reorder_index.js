@@ -23,7 +23,7 @@ export default function Home({ data, location, pageContext }) {
 
 
   return (
-    <Layout location={location} pageContext={pageContext}>
+    <Layout location={location} email={email}>
       <SEO
         title="Reorder | The Good Trends"
         keywords={[`gatsby`, `application`, `react`]}

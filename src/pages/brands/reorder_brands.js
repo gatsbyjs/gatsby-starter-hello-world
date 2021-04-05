@@ -9,7 +9,7 @@ import { useShoppingCart } from "use-shopping-cart"
 export default function Home({ data, location, pageContext }) {
 
   const { cartDetails } = useShoppingCart()
-  const { brand_id } = pageContext
+  const { brand_id, email } = pageContext
 
 
   const qitems = Object.keys(cartDetails).reduce((acc, cur) => {
@@ -23,7 +23,7 @@ export default function Home({ data, location, pageContext }) {
 
   console.log(meetmin)
   return (
-    <Layout location={location} pageContext={pageContext} >
+    <Layout location={location} brand_id={brand_id} email={email} >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <div  className={styles.brand_summary_container}>
         <div className={styles.brand_center_header}>

@@ -8,7 +8,7 @@ import { cartWholesaleTotal, cartQtyTotal } from "../../helpers/helpers"
 import {useSpring, animated} from 'react-spring'
 import Totals from "./Totals"
 
-export default function Layout({ children, location, email }) {
+export default function Layout({ children, location, email, brand_id }) {
 	const path = location.pathname;
 
 	const data = useStaticQuery(graphql`

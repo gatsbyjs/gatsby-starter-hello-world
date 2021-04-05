@@ -5,6 +5,8 @@ import * as styles from "../../pages/styles/home.module.css"
 import { useShoppingCart } from "use-shopping-cart"
 import { gql } from "graphql-tag"
 import { useQuery } from "@apollo/client"
+import { CircleLoading } from 'react-loadingg';
+
 
 const BrandList = ({ location, brand, email, pageContext }) => {
 
@@ -60,7 +62,7 @@ const BrandList = ({ location, brand, email, pageContext }) => {
           <span style={{fontColor: `grey`}}>{`${brand.title}`}</span>
         </div>
         { loading 
-        ? `Brand products are loading...`
+        ? <CircleLoading color="#ff5757" />
         :
         <div className={styles.home__contentGrid}>
           {data.brand_products.map((node) => {
