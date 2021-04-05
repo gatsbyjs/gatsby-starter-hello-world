@@ -2,16 +2,18 @@ import React from "react"
 import { Link } from "gatsby"
 import * as bstyles from "./BrandCard.module.css"
 
-const BrandCard = ({ brand, email }) => {
+const BrandCardDynamic = ({ brand, email }) => {
+  
   const toTitleCase = str => {
     return str.replace(/\w\S*/g, function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
     })
   }
+  console.log(email)
 
   return (
     <div className={bstyles.productItem}>
-      <Link to={`/customer/${email}/${brand.brand_id}`} state={{email: email,brand_id: brand.brand_id}}>
+      <Link to={`/brandselection/`} state={{...brand, email}}>
         <div className={bstyles.productItem__imgContainer}>
           <img
             src={brand.brand_image_url}
@@ -29,4 +31,4 @@ const BrandCard = ({ brand, email }) => {
   )
 }
 
-export { BrandCard as default }
+export { BrandCardDynamic as default }

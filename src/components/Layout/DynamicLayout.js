@@ -8,7 +8,7 @@ import { cartWholesaleTotal, cartQtyTotal } from "../../helpers/helpers"
 import {useSpring, animated} from 'react-spring'
 import Totals from "./Totals"
 
-export default function Layout({ children, location, email }) {
+export default function DynamicLayout({ children, location, email, brand }) {
 	const path = location.pathname;
 
 	const data = useStaticQuery(graphql`
@@ -29,15 +29,10 @@ export default function Layout({ children, location, email }) {
 		<div className={styles.layout}>
 			<header className={styles.layout__header}>
 				<div className={styles.layout__headerleft}>
-					<div >
-						{!(
-							typeof brand_id == "undefined" &&
-							!location.pathname.includes("cart")
-						) && (
-							<Link to={`/customer/${email}`} style={{ align: `left` }}>
-								<h4 className={styles.layout__headerText}>&#60; Brands</h4>
-							</Link>
-						)}
+					<div style={{ display: `flex`, width: `33%`, justifyContent: `left` }} >
+					<Link to={`/customer/${email}`} style={{ align: `left` }}>
+						<h4 className={styles.layout__headerText}>&#60; Brands</h4>
+					</Link>
 					</div>
 				</div>
 

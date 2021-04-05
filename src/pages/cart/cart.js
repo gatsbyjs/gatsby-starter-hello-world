@@ -34,8 +34,6 @@ export default function Cart({ data, location, pageContext }) {
 
   const cartEmpty = (cartWholesaleTotal(cartDetails) == 0)
 
-  console.log(cartWholesaleTotal(cartDetails))
-
   const placeOrder = async () => {
     var url=process.env.GATSBY_ORDER_URL;
     
@@ -60,7 +58,7 @@ export default function Cart({ data, location, pageContext }) {
   }
 
   return (
-    <Layout location={location} pageContext={pageContext}>
+    <Layout location={location} email={email}>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <div style={{ padding: `0 1rem`, width: `100%` }}>
         
@@ -176,10 +174,8 @@ export const query = graphql`
   query($email: String) {
     brands: allAirtable(
       filter: {
-        table: { eq: "ordered_brands" }
-        data: { email: { eq: $email } }
+        table: { eq: "brand_catalog" }
       }
-      limit: 50
     ) {
       edges {
         node {
@@ -190,6 +186,7 @@ export const query = graphql`
             brand_image_url
             brand_name
             brand_mixmatch_moq
+            title
           }
         }
       }

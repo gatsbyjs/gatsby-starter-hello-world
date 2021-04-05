@@ -10,6 +10,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import BrandCard from "../components/Brands/BrandCard"
+import BrandCardDynamic from "../components/Brands/BrandCardDynamic"
 import * as styles from "./styles/home.module.css"
 
 export default function Home({ data, location, pageContext }) {
@@ -79,7 +80,7 @@ export default function Home({ data, location, pageContext }) {
             .filter(edge => !(p_list.includes(edge.node.data.brand_id)))
             .map(({ node }) => {
             return (
-              <BrandCard key={node.id} brand={{ ...node.data }} email={email} />
+              <BrandCardDynamic key={node.id} brand={{ ...node.data }} email={email} />
             )
           })}
         </div>
@@ -105,6 +106,7 @@ export const query = graphql`
             brand_id
             brand_image_url
             brand_name
+            brand_mixmatch_moq
           }
         }
       }
@@ -124,6 +126,8 @@ export const query = graphql`
             brand_id
             brand_image_url
             brand_name
+            brand_mixmatch_moq
+            title
           }
         }
       }

@@ -6,7 +6,7 @@ import { usePrevious } from "../../hooks/usePrevious"
 import { useShoppingCart } from "use-shopping-cart"
 
 const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
-
+  
   const {
     addItem,
     cartDetails,
