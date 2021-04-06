@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "CI= npm run build"
   functions = "functions"
   publish = "public"
 
@@ -12,6 +12,6 @@
 
 [[redirects]]
   from = "/brandselection/*"
-  to = "/brandselection/"
+  to = "/brandselection"
   status = 200
   force = true
