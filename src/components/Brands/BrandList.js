@@ -41,6 +41,9 @@ const BrandList = ({ location, brand, email, pageContext }) => {
   const meetmin=(casecount >= brand.brand_mixmatch_moq)
 
   return (
+
+  <DynamicLayout location={location} brand={brand} email={email}>
+  <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <div>
       <div className={styles.brand_summary_container}>
         <div className={styles.brand_center_header}>
@@ -78,6 +81,7 @@ const BrandList = ({ location, brand, email, pageContext }) => {
       }
     </div>
   </div>
+  </DynamicLayout>
   )
 }
 

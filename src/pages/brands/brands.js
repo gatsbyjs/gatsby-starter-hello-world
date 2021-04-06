@@ -8,10 +8,11 @@ import Layout from "../../components/Layout/Layout"
 export default function Home({ data, location, pageContext }) {
   
   const { state = {} } = location
+  
   const { email, brand_id } = state
 
   return (
-    <Layout>
+    <Layout location={location} brand_id={brand_id} email={email} >
       <Router basepath={`/customer`}>
         <BrandList path={`/${email}/brand`} brand_id={brand_id} email={email} pageContext={pageContext}/>
       </Router>
