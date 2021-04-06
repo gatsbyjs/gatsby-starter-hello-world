@@ -39,7 +39,7 @@ const CartBrandSection = ({ brand, pageContext }) => {
           </span>
         </div>
         <div className={styles.brandcart__headerbutton}>
-          <Link to={`/brandselection`} state={{...brand, email}}>
+          <Link to={`/brandselection/${brand.brand_id}`} state={{...brand, email}}>
             {qitems >= brand.brand_mixmatch_moq ? (
               <button className={styles.brandcart__button_abovemin}>
                 <span className={styles.buttontext}> Minimum Reached</span>

@@ -29,7 +29,7 @@ export default function Layout({ children, location, email, brand_id }) {
 		<div className={styles.layout}>
 			<header className={styles.layout__header}>
 				<div className={styles.layout__headerleft}>
-					<div >
+					<div>
 						{!(
 							typeof brand_id == "undefined" &&
 							!location.pathname.includes("cart")

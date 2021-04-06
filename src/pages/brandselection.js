@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Router } from "@reach/router"
 import BrandList from "../components/Brands/BrandList"
-import DynamicLayout from "../components/Layout/Layout"
+import DynamicLayout from "../components/Layout/DynamicLayout"
 import SEO from "../components/seo"
 
 export default function Brandselection({ data, location, pageContext }) {
@@ -14,7 +14,7 @@ export default function Brandselection({ data, location, pageContext }) {
     <DynamicLayout location={location} brand={props} email={props.email}>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <Router basepath={`/brandselection`}>
-        <BrandList path={`/`} brand={props} email={props.email} pageContext={pageContext}/>
+        <BrandList path={`/:brand_id`} brand={props} email={props.email} pageContext={pageContext}/>
       </Router>
     </DynamicLayout>
   )

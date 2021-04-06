@@ -13,7 +13,7 @@ const BrandCardDynamic = ({ brand, email }) => {
 
   return (
     <div className={bstyles.productItem}>
-      <Link to={`/brandselection/`} state={{...brand, email}}>
+      <Link to={`/brandselection/${brand.brand_id}`} state={{...brand, email}}>
         <div className={bstyles.productItem__imgContainer}>
           <img
             src={brand.brand_image_url}

@@ -17,15 +17,6 @@ module.exports = {
   	},
   	// Plugins starting with datasources
 	plugins: [{
-		      resolve: `gatsby-source-stripe`,
-		      options: {
-		        objects: ["Price"],
-		        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
-		        downloadFiles: false,
-		      },
-		    },
-		    // Required for dynamic app paths to limit SSR
-		    {
 		      resolve: `gatsby-plugin-create-client-paths`,
 		      options: { prefixes: [`/brandselection/*`] },
 		    },
@@ -119,7 +110,15 @@ module.exports = {
 			    // },
 		  		
 		  	   // Requires for cart management
-			  '@stripe/stripe-js',
+			   '@stripe/stripe-js',
+				{
+			      resolve: `gatsby-source-stripe`,
+			      options: {
+			        objects: ["Price"],
+			        secretKey: process.env.GATSBY_STRIPE_SECRET_KEY,
+			        downloadFiles: false,
+			      },
+			    },
 			  'use-shopping-cart',
 			  '@emotion/react',
 			  

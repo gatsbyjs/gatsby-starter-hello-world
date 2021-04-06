@@ -29,7 +29,7 @@ export default function DynamicLayout({ children, location, email, brand }) {
 		<div className={styles.layout}>
 			<header className={styles.layout__header}>
 				<div className={styles.layout__headerleft}>
-					<div style={{ display: `flex`, width: `33%`, justifyContent: `left` }} >
+					<div>
 					<Link to={`/customer/${email}`} style={{ align: `left` }}>
 						<h5 className={styles.layout__headerText}>&#60; Brands</h5>
 					</Link>
@@ -55,7 +55,7 @@ export default function DynamicLayout({ children, location, email, brand }) {
 				>
 					<div>
 						<Link to={`/customer/${email}/cart`}>
-							<h5 className={styles.layout__headerText_right}>Cart</h5>
+							<h5 className={styles.layout__headerText_right}>Cart></h5>
 							<Totals 
 							wholesale={cartWholesaleTotal(cartDetails)}
 							units={cartQtyTotal(cartDetails)}
