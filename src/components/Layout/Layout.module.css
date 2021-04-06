@@ -48,18 +48,18 @@
 }
 
 .layout__headerText {
-    font-size: 1.88rem;
+    font-size: 1.7rem !important;
     font-weight: 300;
     margin: 0;
-    padding: 0;
+    padding: 5px 0px 0px 0px;
     text-decoration: none !important;
 }
 
 .layout__headerText_right {
-    font-size: 1.88rem;
+    font-size: 1.7rem !important;
     font-weight: 300;
     margin: 0;
-    padding: 0;
+    padding: 5px 0px 0px 0px;
     text-decoration: none !important;
     text-align : right;
 }

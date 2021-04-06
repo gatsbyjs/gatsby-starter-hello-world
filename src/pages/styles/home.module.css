@@ -16,7 +16,7 @@ a, a:hover, a:focus {
     height: 70vh;
     justify-content: center;
     max-height: 300px;
-    padding: 5rem;
+    padding: 2rem;
 }
 
 .home__ctaText {

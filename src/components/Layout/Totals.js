@@ -21,7 +21,7 @@ const props = useSpring({
 
 
 	return (
-	<span style={{ fontSize: `0.8em` }}>
+	<span style={{ fontSize: `0.7em` }}>
 	{ changed ?
 	<animated.span style={props}>
 		{wholesale != 0 &&

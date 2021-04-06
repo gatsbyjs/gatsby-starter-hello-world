@@ -5,11 +5,11 @@ import BrandList from "../components/Brands/BrandList"
 import DynamicLayout from "../components/Layout/DynamicLayout"
 import SEO from "../components/seo"
 
-export default function Brandselection() {
+export default function Brandselection({location}) {
   
   return (
       <Router basepath={`/brandselection`}>
-        <BrandList path={`/:brand_id`} />
+        <BrandList path={`/:brand_id`} location={location}/>
       </Router>
   )
 }

@@ -28,6 +28,7 @@
   vertical-align: top;
   margin: auto;
   padding: 10px 0px 0px 5px;
+  font-size:0.9em;
 }
 
 .brandcart__lineitemright{
@@ -36,7 +37,7 @@
   text-align:right;
   vertical-align: top;
   padding: 40px 5px 0px 0px;
-
+  font-size:0.9em;
 }
 
 .productItem__text {
@@ -106,10 +107,9 @@
   display:inline-block;
   cursor:pointer;
   color:black;
-  font-family:Arial;
-  font-size:14px;
+  font-size:12px;
   font-weight:bold;
-  padding:5px 10px 5px 10px;
+  padding:5px 5px 5px 5px;
   text-decoration:none;
   line-height: 1.1em;
 }

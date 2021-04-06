@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { CircleLoading } from 'react-loadingg'
 import ProductCard from "../Products/ProductCard"
+import DynamicLayout from "../Layout/DynamicLayout"
+import SEO from "../seo"
 import { useShoppingCart } from "use-shopping-cart"
 import { gql } from "graphql-tag"
 import { useQuery } from "@apollo/client"
@@ -9,7 +11,12 @@ import { useQuery } from "@apollo/client"
 import * as styles from "../../pages/styles/home.module.css"
 
 
-const BrandList = ({ location, brand, email, pageContext }) => {
+const BrandList = ({ location }) => {
+
+  console.log(location)
+  const { state } = location
+  const brand = state
+  const email= brand.email
 
   const { cartDetails } = useShoppingCart()
   
