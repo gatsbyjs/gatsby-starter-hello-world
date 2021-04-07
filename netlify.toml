@@ -1,5 +1,5 @@
 [build]
-  command = "CI= npm run build"
+  command = "npm run build"
   functions = "functions"
   publish = "public"
 
