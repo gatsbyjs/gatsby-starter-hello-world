@@ -24,6 +24,7 @@ const typeDefs = gql`
     product_average_local_shipping: String
     product_wholesale_price: String
     title: String
+    is_in_stock: String
   }
   type Customer {
     email: String

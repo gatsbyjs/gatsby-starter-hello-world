@@ -99,7 +99,8 @@ const BrandProductTransformResponse = (id, fields) => ({
   image_url_1: fields.image_url_1,
   product_average_local_shipping: fields.product_average_local_shipping,
   product_wholesale_price: fields.product_wholesale_price,
-  title: fields.title
+  title: fields.title,
+  is_in_stock: fields.is_in_stock,
 })
 
 

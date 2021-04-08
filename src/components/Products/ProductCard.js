@@ -63,19 +63,30 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
   return (
     <div className={pstyles.productItem}>
       <div className={pstyles.productItem__imgContainer}>
-        <img
+        { (product.is_in_stock=="True")
+        ? <img
           src={product.image_url_1}
           alt={product.name}
-          style={{ margin: `0 0 0.25rem 0` }}
-        />
+          className={pstyles.productItem__img_in_stock}
+          />
+        : <img
+          src={product.image_url_1}
+          alt={product.name}
+          className={pstyles.productItem__img_out_of_stock}
+          />
+          }
+          {(product.is_in_stock=="False") && <span className={pstyles.productItem__ooscallout}>OUT OF STOCK</span>} 
       </div>
-      <p className={pstyles.productItem__text}>{product.name}</p>
-      <p
-        className={`${pstyles.productItem__text} ${pstyles.productItem__textLight}`}
-      >
-        WS {numeral(product.product_wholesale_price).format("$0,0.00")}
-      </p>
-      <div className={pstyles.qtypickercontainer}>
+      <div style={{display: `block`, alignSelf: `baseline`,verticalAlign: `top`,align:`top`}}>
+        <p className={pstyles.productItem__text}>{product.name}</p>
+        <p
+          className={`${pstyles.productItem__text} ${pstyles.productItem__textLight}`}
+        >
+          WS {numeral(product.product_wholesale_price).format("$0,0.00")}
+        </p>
+      </div>
+      { (product.is_in_stock=="True")
+      ? <div className={pstyles.qtypickercontainer}>
           <QtyPicker
             setPcount={setPcount}
             pcount={
@@ -85,6 +96,8 @@ const ProductCard = ({ product, setCasecount, casecount,brand_id }) => {
             }
           />
       </div>
+      : ""
+      }
     </div>
   )
 }

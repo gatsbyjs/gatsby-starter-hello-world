@@ -43,7 +43,9 @@ export default function Home({ data, location, pageContext }) {
           <span style={{fontColor: `grey`}}>{`${data.brand.data.title}`}</span>
         </div>
         <div className={styles.home__contentGrid}>
-          {data.all_ordered_products.edges.map(({ node }) => {
+          {data.all_ordered_products.edges
+            .sort((a,b) => (a.node.data.is_in_stock > b.node.data.is_in_stock) ? -1 : 1 )
+            .map(({ node }) => {
             return (
               <ProductCard
                 key={node.id}
@@ -59,7 +61,10 @@ export default function Home({ data, location, pageContext }) {
           <h2>From the same maker</h2>
         </div>
         <div className={styles.home__contentGrid}>
-          {data.all_brand_products.edges.filter( (edge) => !(p_list.includes(edge.node.data.product_id)) ).map(({ node }) => {
+          {data.all_brand_products.edges
+            .sort((a,b) => (a.node.data.is_in_stock > b.node.data.is_in_stock) ? -1 : 1 )
+            .filter((edge) => !(p_list.includes(edge.node.data.product_id)) ) 
+            .map(({ node }) => {
             return (
               <ProductCard
                 key={node.id}
@@ -83,7 +88,7 @@ export const query = graphql`
         table: { eq: "product_catalog" }
         data: { brand_id: { eq: $brand_id } }
       }
-      limit: 50
+      limit: 100
       ) 
      {
       edges {
@@ -97,6 +102,7 @@ export const query = graphql`
             product_average_local_shipping
             product_wholesale_price
             brand_mixmatch_moq
+            is_in_stock
           }
         }
       }
@@ -118,6 +124,7 @@ export const query = graphql`
             image_url_1
             product_average_local_shipping
             product_wholesale_price
+            is_in_stock
           }
         }
       }

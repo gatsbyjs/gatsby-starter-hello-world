@@ -96,6 +96,7 @@ a, a:hover, a:focus {
   border: black;
   border-color: black;
   border-width: 2px;
+  z-index: 10 !important
 }
 
 @media screen and (max-width: 1000px) {

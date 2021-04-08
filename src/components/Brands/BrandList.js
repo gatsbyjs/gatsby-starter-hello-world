@@ -35,6 +35,7 @@ const BrandList = ({ location }) => {
         image_url_1
         product_average_local_shipping
         product_wholesale_price
+        is_in_stock
       }
     }
   `
@@ -73,7 +74,9 @@ const BrandList = ({ location }) => {
         ? <CircleLoading color="#ff5757" />
         :
         <div className={styles.home__contentGrid}>
-          {data.brand_products.map((node) => {
+          {data.brand_products
+            .sort((a,b) => (a.is_in_stock > b.is_in_stock) ? -1 : 1 )
+            .map((node) => {
             return (
               <ProductCard
                 key={node.product_id}
