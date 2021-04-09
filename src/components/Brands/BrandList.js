@@ -67,7 +67,7 @@ const BrandList = ({ location }) => {
 
       <div className={styles.content_container}>
         <div className={styles.home__header_sub_menu}>
-          <h2 style={{marginBottom:`0px`}}>Previous orders from {`${brand.brand_name}`}</h2>
+          <h2 style={{marginBottom:`0px`}}>Order from {`${brand.brand_name}`}</h2>
           <span style={{fontColor: `grey`}}>{`${brand.title}`}</span>
         </div>
         { loading 
