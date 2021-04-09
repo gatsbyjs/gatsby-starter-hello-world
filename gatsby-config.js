@@ -141,7 +141,10 @@ module.exports = {
 			  {
 			    resolve: `gatsby-plugin-netlify`,
 			    options: {
-			      headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
+			      headers: {
+			      	'Content-Type': ['application/json'], 
+			      	'Access-Control-Allow-Origin': ['*'], 
+			      	'Access-Control-Allow-Headers' : ['Content-Type,X-XSRF-TOKEN,X-CSRF-TOKEN']}, // option to add more headers. `Link` headers are transformed by the below criteria
 			      allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
 			      mergeSecurityHeaders: true, // boolean to turn off the default security headers
 			      mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
@@ -150,5 +153,15 @@ module.exports = {
 			      generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
 			    },
 			  },
-			],
-};
+			  // Tracking plugins
+			  {
+		      resolve: `gatsby-plugin-google-analytics`,
+		      options: {
+		        // The property ID; the tracking code won't be generated without it
+		        trackingId: "UA-142559399-1",
+		        // Defines where to place the tracking script - `true` in the head and `false` in the body
+		        head: false,
+		       },
+		      }
+		],
+	};

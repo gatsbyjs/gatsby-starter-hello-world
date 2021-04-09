@@ -30,6 +30,7 @@
     "gatsby-legacy-polyfills": "^1.0.0",
     "gatsby-plugin-create-client-paths": "^3.2.0",
     "gatsby-plugin-emotion": "^6.0.0",
+    "gatsby-plugin-google-analytics": "^3.2.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-modal-routing": "^1.2.0",
     "gatsby-plugin-netlify": "^3.2.0",

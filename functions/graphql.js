@@ -43,6 +43,9 @@ const typeDefs = gql`
     getBrandProducts(brand_id: String!): [BrandProduct]
   }
 `
+//https://fauna.com/blog/building-a-job-posting-platform-with-faunadb-and-apollo
+//https://github.com/netlify/netlify-dev-gatsby-fauna-demo/tree/master/functions/fauna-graphql
+//https://github.com/molebox/serverless-graphql-potter/tree/master/functions/graphql
 
 const resolvers = {
   Query: {
