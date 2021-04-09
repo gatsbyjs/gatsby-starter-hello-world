@@ -142,7 +142,7 @@ module.exports = {
 			    resolve: `gatsby-plugin-netlify`,
 			    options: {
 			      headers: {
-			      	'Content-Type': ['application/json'], 
+			      	'Content-Type': ['*'], 
 			      	'Access-Control-Allow-Origin': ['*'], 
 			      	'Access-Control-Allow-Headers' : ['Content-Type,X-XSRF-TOKEN,X-CSRF-TOKEN']}, // option to add more headers. `Link` headers are transformed by the below criteria
 			      allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
