@@ -13,6 +13,8 @@ const server = new ApolloServer({
   context: ({ event }) => {
     return { client, query, headers: event.headers }
   },
+  introspection: false,
+  playground: false,
 })
 
 const handler = server.createHandler()
