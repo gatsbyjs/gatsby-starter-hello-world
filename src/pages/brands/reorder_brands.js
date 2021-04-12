@@ -21,7 +21,6 @@ export default function Home({ data, location, pageContext }) {
 
   const meetmin=(casecount >= data.brand.data.brand_mixmatch_moq)
 
-  console.log(meetmin)
   return (
     <Layout location={location} brand_id={brand_id} email={email} >
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />

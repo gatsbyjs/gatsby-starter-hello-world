@@ -33,6 +33,24 @@ export default function Home({ data, location, pageContext }) {
     setUseremail(e.target.value.toLowerCase())
   }
 
+  const handleKey = (event) => {
+    if (event.charCode === 13) {
+        event.preventDefault()
+        if (typeof results.data !== 'undefined') {
+          if (useremail !== "" && results.data.getCustomer) {
+            setIsloggedin(true)
+            navigate(`/customer/${useremail}`, {
+              state: { useremail },
+            })} else {
+              setErrormessage("We couldn't recognize this email")
+            }
+        }
+    }
+    else {
+      return false
+    }
+}
+
   const handleClick = () => {
     if (typeof results.data !== 'undefined') {
         if (useremail !== "" && results.data.getCustomer) {
@@ -53,7 +71,7 @@ export default function Home({ data, location, pageContext }) {
       },[])
   
   const Form = () => (
-    <form>
+    <form onKeyPress={handleKey}>
       <input
         className={styles.signin__input}
         type="text"
