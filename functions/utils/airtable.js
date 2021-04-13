@@ -105,6 +105,7 @@ const BrandProductTransformResponse = (id, fields) => ({
 
 
 
+
 const CustomerTransformResponse = (id, fields) => ({
   email: fields.email,
   unique_link_short: fields.unique_link_short,
