@@ -48,6 +48,12 @@ a, a:hover, a:focus {
     }
 }
 
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+    .home__contentGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .home__reactTabs {
   margin: auto;
 }
@@ -364,10 +370,8 @@ top: 5.5em;
   display: inline-flex;
   align-items: center;
   align: center;
-  max-width:125px;
-  width:100%;
+  width:200px;
   height:60px;
-  min-width: 60px;
   background-color:#000000;
   border:1px solid #000000;
   display:inline-block;

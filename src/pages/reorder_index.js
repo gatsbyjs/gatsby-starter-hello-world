@@ -10,6 +10,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import BrandCard from "../components/Brands/BrandCard"
+import Referral from "../components/Referral/Referral"
 import BrandCardDynamic from "../components/Brands/BrandCardDynamic"
 import * as styles from "./styles/home.module.css"
 
@@ -30,9 +31,11 @@ export default function Home({ data, location, pageContext }) {
       />
       <div className={styles.home__cta}>
         <div className={styles.home__ctaText}>
-          <h2 style={{ margin: `0px`, fontSize: "2em" }}>
-            Enjoy Free shipping on all orders in April
-          </h2>
+          <h3 style={{ margin: `0px`, fontSize: "2em" }}>
+            Welcome back {data.customer.data.Company}
+            <br/>
+            <span style={{ fontSize: "0.6em" }}>Enjoy Free shipping on all orders in April</span>
+          </h3>
         </div>
       </div>
       <div className="content-container">
@@ -45,6 +48,13 @@ export default function Home({ data, location, pageContext }) {
           })}
         </div>
       </div>
+
+      <Referral 
+      email={email} 
+      link={data.customer.data.unique_link_short}
+      link_code={data.customer.data.unique_link_code_short}
+       />
+
       <div className="content_container">
         <div className={styles.home__advisorcontainer}>
           <div className={styles.home__advisorimg}>
@@ -160,6 +170,8 @@ export const query = graphql`
         owner_last_name
         owner_phone
         owner_email
+        unique_link_short
+        unique_link_code_short
       }
     }
   }

@@ -1,0 +1,74 @@
+.referral_container{
+  align-content: top;
+  width:100%;
+  padding: 0px 5px 0px 5px;
+  border-top: 1px solid #F0F0F0;
+  margin-top: 30px;
+}
+
+.referral_left{
+  display: inline-block;
+  width:100%;
+  vertical-align: top;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.referral_right{
+  display: inline-block;
+  width:100%;
+  vertical-align: top;
+  align-content: center;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media screen and (min-width: 1000px) {
+   .referral_left{
+    display: inline-block;
+    width:50%;
+    text-align: left;
+  }
+
+  .referral_right{
+    display: inline-block;
+    width:50%;
+    vertical-align: center;
+    justify-content: center;
+    align-content: center;
+
+  }
+
+}
+
+.referral__button {
+  display: inline-flex;
+  align-items: center;
+  align: center;
+  width:200px;
+  height:60px;
+  min-width: 60px;
+  background-color:#000000;
+  border:1px solid #000000;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:20px;
+  font-weight:bold;
+  padding:5px 10px 5px 10px;
+  text-decoration:none;
+  line-height: 1.1em;
+  margin:20px 20px 20px 20px;
+}
+
+.referral__button:hover {
+  background-color:#ffffff;
+  color:black;
+}
+.referral__button:active {
+  position:relative;
+  top:1px;
+}

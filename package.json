@@ -2,8 +2,8 @@
   "name": "tgt-reorder",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
-  "version": "0.1.0",
-  "license": "Victor Mithouard",
+  "version": "1.0.1",
+  "license": "The Good Trends",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -38,15 +38,14 @@
     "gatsby-plugin-offline": "^4.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sass": "^4.1.0",
-    "gatsby-plugin-sharp": "^3.0.1",
     "gatsby-plugin-sitemap": "^3.0.0",
     "gatsby-plugin-typography": "^3.0.0",
     "gatsby-source-airtable": "^2.1.1",
+    "gatsby-source-faunadb": "^1.0.0",
     "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-source-graphql": "^3.3.0",
     "gatsby-source-mysql": "^2.2.3",
-    "gatsby-source-pg": "^0.2.1",
     "gatsby-source-stripe": "^3.2.2",
-    "gatsby-transformer-sharp": "^3.0.0",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
     "isomorphic-fetch": "^3.0.0",
@@ -76,6 +75,11 @@
     "typography-theme-ocean-beach": "^0.16.19",
     "use-shopping-cart": "^2.4.3",
     "util": "^0.12.3"
+  },
+  "resolutions": {
+    "graphql": "^15.4.0",
+    "graphql-compose": "^7.25.0",
+    "webpack": "^5.24.2"
   },
   "devDependencies": {
     "prettier": "2.2.1"

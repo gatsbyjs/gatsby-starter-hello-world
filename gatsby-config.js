@@ -51,43 +51,22 @@ module.exports = {
 		          baseId: process.env.GATSBY_AIRTABLE_BASE_REORDER_ID,
 		          tableName: `reorders`,
 		        }
-		      ]}},
-		     //  {
-			    //   resolve: `gatsby-source-mysql`,
-			    //   options: {
-			    //     connectionDetails: {
-			    //       client: 'pg',
-			    //       host: 'good-trends-db.cyihl0iyg8xl.us-east-1.rds.amazonaws.com',
-			    //       port: 5432,
-			    //       user: 'good_trends_user',
-			    //       password: 'PuUJ4NH9Af7',
-			    //       database: 'good_trends_db',
-			    //       //ssl  : {
-    			// 		//ca : fs.readFileSync(__dirname + '/mysql-ca.crt')
-
-			    //     	},
-			    //     queries: [
-			    //       {
-			    //         statement: 'SELECT * FROM bigcommerce_sellerproductorder',
-			    //         idFieldName: 'Id',
-			    //         name: 'sorder'
-			    //       }
-			    //     ]
-			    //   }
-			    // },
-			  // {
-		   //    resolve: "gatsby-source-pg",
-		   //    options: {
-			  //       connectionString: "postgres://good_trends_user:PuUJ4NH9Af7@good-trends-db.cyihl0iyg8xl.us-east-1.rds.amazonaws.com:5432/good_trends_db",
-			  //       schema: "public",
-			  //       appendPlugins: [require("@graphile-contrib/pg-simplify-inflector")],
-			  //     },
-			  // },
+		       ]}},
+		      {
+		      resolve: "gatsby-source-graphql",
+		      options: {
+		        typeName: "Fauna",
+		        fieldName: "fauna",
+		        url: "https://graphql.fauna.com/graphql",
+		        headers: {
+		          Authorization: `Bearer ${process.env.GATSBY_FAUNADB_SERVER_SECRET}`,
+		        },
+		       },
+		     },
+		     
 			  // Design & speed load time
 			  'gatsby-plugin-sass',
 			  'gatsby-legacy-polyfills',
-			  `gatsby-transformer-sharp`, 
-			  `gatsby-plugin-sharp`,
 			  'gatsby-plugin-emotion',
 			  'gatsby-plugin-react-helmet',
 			  {
