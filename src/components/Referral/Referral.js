@@ -2,13 +2,10 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import * as styles from "./Referral.module.css"
 
-
-const Referral = (props) => {
-  
-
+const Referral = props => {
   const [ispressed, setIspressed] = useState("COPY LINK")
 
-  const path=`mailto:?cc=info@thegoodtrends.com&subject=We're%20referring%20you%20to%20The%20Good%20Trends
+  const path = `mailto:?cc=info@thegoodtrends.com&subject=We're%20referring%20you%20to%20The%20Good%20Trends
   &body=Hi%2C%0D%0A%0D%0AThank%20you%20for%20your%20continued%20business%20with%20us.%20We%20love%20your%20brand
   %20and%20think%20it%20would%20be%20a%20good%20fit%20for%20The%20Good%20Trends%2C%20the%20specialty%20wholesale%20
   platform%20dedicated%20to%20local%20food%20makers.%0D%0A%0D%0AWe're%20enjoying%20using%20their%20marketplace%20and%20
@@ -22,35 +19,37 @@ const Referral = (props) => {
   paste%20the%20link%20below%20into%20a%20new%20browser%20tab%20and%20hit%20Enter%3A%0D%0A%0D%0A
   https%3A%2F%2Frefer.thegoodtrends.com%2F${props.link_code}%0D%0A%0D%0AAll%20the%20best!`
 
-  return (
-    <div className="content_container">
-      <div className={styles.referral_container}>
-        <div className={styles.referral_left}>
-          <h3>Consolidate your local maker ordering</h3>
-          <p>
-            Save ordering time and reduce error by inviting makers with your unique referral link. You get $50 per new maker you invite.
-          </p>
-        </div>
-        <div className={styles.referral_right}>
+  if (typeof props.link === "undefined") {
+    return ""
+  } else {
+    return (
+      <div className="content_container">
+        <div className={styles.referral_container}>
+          <div className={styles.referral_left}>
+            <h2>Consolidate your local maker ordering</h2>
+            <p>
+              Save ordering time and reduce error by inviting makers with your
+              unique referral link. You get $50 per new maker you invite.
+            </p>
+          </div>
+          <div className={styles.referral_right}>
             <button
               className={styles.referral__button}
-              onClick={() => {setIspressed("COPIED")
+              onClick={() => {
+                setIspressed("COPIED")
                 navigator.clipboard.writeText(props.link)
               }}
             >
-            {ispressed}
+              {ispressed}
             </button>
-          <a href={path} target="_blank">
-            <button
-              className={styles.referral__button}>
-            SEND EMAIL
-            </button>
-          
-          </a>
+            <a href={path} target="_blank">
+              <button className={styles.referral__button}>SEND EMAIL</button>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export { Referral as default }
