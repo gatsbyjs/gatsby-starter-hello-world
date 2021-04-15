@@ -39,7 +39,7 @@ export default function Home({ data, location, pageContext }) {
         </div>
       </div>
       <div className="content-container">
-        <h1> Reorder from your previous orders </h1>
+        <h1> Reorder from your favorite makers </h1>
         <div className={styles.home__contentGrid}>
           {data.ordered_brands.edges.map(({ node }) => {
             return (
