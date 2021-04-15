@@ -325,6 +325,7 @@ top: 5.5em;
 .home__advisorimg{
   display: inline-block;
   width:35%;
+  padding-top:30px;
 }
 
 .home__advisortext{
@@ -347,6 +348,7 @@ top: 5.5em;
 .home__advisorimg{
   display: inline-block;
   width:20%;
+  padding-top:30px;
 }
 
 .home__advisortext{
@@ -370,8 +372,9 @@ top: 5.5em;
   display: inline-flex;
   align-items: center;
   align: center;
-  width:200px;
+  max-width:200px;
   height:60px;
+  min-width: 140px;
   background-color:#000000;
   border:1px solid #000000;
   display:inline-block;

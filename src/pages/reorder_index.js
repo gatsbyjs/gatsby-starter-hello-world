@@ -75,7 +75,7 @@ export default function Home({ data, location, pageContext }) {
               <button className={styles.advisor__button}>EMAIL ME</button>
             </a>
             <a
-              href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}
+              href={`sms:${data.customer.data.textline_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}
             >
               <button className={styles.advisor__button}>TEXT ME</button>
             </a>
@@ -169,6 +169,7 @@ export const query = graphql`
         owner_first_name
         owner_last_name
         owner_phone
+        textline_phone
         owner_email
         unique_link_short
         unique_link_code_short

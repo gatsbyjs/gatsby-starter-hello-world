@@ -161,7 +161,7 @@ export default function Cart({ data, location, pageContext }) {
           </div>
           <div className={styles.home__advisorcta}>
           <a href={`mailto:${data.customer.data.owner_email}`}><button className={styles.advisor__button}>EMAIL ME</button></a>
-          <a href={`sms:${data.customer.data.owner_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>TEXT ME</button></a>
+          <a href={`sms:${data.customer.data.textline_phone[0]}&body=Hi%20${data.customer.data.owner_first_name[0]}`}><button className={styles.advisor__button}>TEXT ME</button></a>
           </div>
           </div>
 
@@ -223,7 +223,7 @@ export const query = graphql`
         card_expiry_year
         card_last4
         card_type
-
+        textline_phone
       }
     }
   }

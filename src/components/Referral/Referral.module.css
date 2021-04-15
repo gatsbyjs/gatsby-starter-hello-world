@@ -48,9 +48,9 @@
   display: inline-flex;
   align-items: center;
   align: center;
-  width:200px;
+  max-width:200px;
   height:60px;
-  min-width: 60px;
+  min-width: 140px;
   background-color:#000000;
   border:1px solid #000000;
   display:inline-block;
