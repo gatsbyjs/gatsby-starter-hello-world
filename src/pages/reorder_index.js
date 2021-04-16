@@ -12,6 +12,8 @@ import SEO from "../components/seo"
 import BrandCard from "../components/Brands/BrandCard"
 import Referral from "../components/Referral/Referral"
 import BrandCardDynamic from "../components/Brands/BrandCardDynamic"
+import SelectionBar from "../components/Merchandising/SelectionBar"
+
 import * as styles from "./styles/home.module.css"
 
 export default function Home({ data, location, pageContext }) {
@@ -38,6 +40,9 @@ export default function Home({ data, location, pageContext }) {
           </h3>
         </div>
       </div>
+
+      <SelectionBar email={email}/>
+ 
       <div className="content-container">
         <h1> Reorder from your favorite makers </h1>
         <div className={styles.home__contentGrid}>

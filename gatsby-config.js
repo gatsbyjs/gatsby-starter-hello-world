@@ -51,7 +51,8 @@ module.exports = {
 		          baseId: process.env.GATSBY_AIRTABLE_BASE_REORDER_ID,
 		          tableName: `reorders`,
 		        }
-		       ]}},
+		       ]}
+		   	  },
 		      {
 		      resolve: "gatsby-source-graphql",
 		      options: {
@@ -69,6 +70,7 @@ module.exports = {
 			  'gatsby-legacy-polyfills',
 			  'gatsby-plugin-emotion',
 			  'gatsby-plugin-react-helmet',
+			  'gatsby-plugin-material-ui',
 			  {
 		      resolve: `gatsby-plugin-typography`,
 			      options: {
