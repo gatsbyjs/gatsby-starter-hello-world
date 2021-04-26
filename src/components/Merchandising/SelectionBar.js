@@ -57,7 +57,7 @@ const SelectionBar = (props) => {
           <Link to={`/merchandising/collections/Summer`} state={{ email: props.email }}><Tab classes={tabStyles} label="Summer Collection" /></Link>
           <Link to={`/merchandising/collections/Best%20Sellers`} state={{ email: props.email }}><Tab classes={tabStyles} label="Best Sellers" /></Link>
           <Link to={`/merchandising/collections/Mother`} state={{ email: props.email }}><Tab classes={tabStyles} label="Mother's Day" /></Link>
-          <Link to={`/merchandising/allcollections/index`} state={{ email: props.email }}><Tab classes={tabStyles} label="All Collections" /></Link>
+          <Link to={`/merchandising/allcollections`} state={{ email: props.email }}><Tab classes={tabStyles} label="All Collections" /></Link>
 
         </Tabs>
       </div>

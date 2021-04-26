@@ -4,11 +4,11 @@ import { CircleLoading } from "react-loadingg"
 import { gql } from "graphql-tag"
 import { useQuery } from "@apollo/client"
 
-import DynamicLayout from "../../../components/Layout/DynamicLayout"
-import SEO from "../../../components/seo"
-import CollectionCardDynamic from "../../../components/Merchandising/CollectionCardDynamic"
+import DynamicLayout from "../Layout/DynamicLayout"
+import SEO from "../seo"
+import CollectionCardDynamic from "./CollectionCardDynamic"
 
-import * as styles from "../../styles/home.module.css"
+import * as styles from "../../pages/styles/home.module.css"
 
 const CollectionList = props => {
  
@@ -23,7 +23,7 @@ const CollectionList = props => {
     }
   }
   `
-
+  console.log(props)
   const { state } = props.location
   const email= state.email
 

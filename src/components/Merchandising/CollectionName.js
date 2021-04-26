@@ -4,15 +4,15 @@ import { CircleLoading } from "react-loadingg"
 import { gql } from "graphql-tag"
 import { useQuery } from "@apollo/client"
 
-import DynamicLayout from "../../../components/Layout/DynamicLayout"
-import SEO from "../../../components/seo"
-import BrandCardDynamic from "../../../components/Brands/BrandCardDynamic"
+import DynamicLayout from "../Layout/DynamicLayout"
+import SEO from "../seo"
+import BrandCardDynamic from "../Brands/BrandCardDynamic"
 
-import * as styles from "../../styles/home.module.css"
+import * as styles from "../../pages/styles/home.module.css"
 
 const BrandCollection = props => {
-  // Queries to get all the orders from the brand products object
 
+  // Queries the brand's products
   const GETBRANDS = gql`
     query($collection_name: String!) {
       getBrandsFromCollection(collection_name: $collection_name) {
@@ -30,7 +30,7 @@ const BrandCollection = props => {
 
   const { loading, error, data } = useQuery(GETBRANDS, {
     variables: {
-      collection_name: props.params.collectionName,
+      collection_name: props.collectionName,
     },
   })
 
