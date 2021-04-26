@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import * as styles from "./SelectionBar.module.css"
-import { AppBar, Tabs, Tab}  from '@material-ui/core';
+import { Tabs, Tab}  from '@material-ui/core';
 import { PhoneIcon, FavoriteIcon, PersonPinIcon } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -20,7 +20,6 @@ const SelectionBar = (props) => {
       borderBottom : '2px solid black',
       borderTop : '1px solid #EEEEEE',
       color : 'black',
-      fontColor : 'black',
     },
     scrollButtons : {
       background: 'black',
@@ -53,12 +52,13 @@ const SelectionBar = (props) => {
         scrollButtons="on"
         indicatorColor="primary"
         >
-          <Link to={`/customer/${props.email}/`}><Tab classes={tabStyles} label="Track Orders"/></Link>
-          <Tab classes={tabStyles} label="Invoices" />
-          <Tab classes={tabStyles} label="Change store" />
-          <Tab classes={tabStyles} label="Summer Collection" />
-          <Tab classes={tabStyles} label="All Collections" />
-          <Tab className={tabStyles.root} label="All Collections" />
+          <Link to={`/account/shipments/${props.email}`} state={{ email: props.email }}><Tab classes={tabStyles} label="Track Shipments"/></Link>
+          <Link to={`/account/invoices/${props.email}`} state={{ email: props.email }}><Tab classes={tabStyles} label="Invoices" /></Link>
+          <Link to={`/merchandising/collections/Summer`} state={{ email: props.email }}><Tab classes={tabStyles} label="Summer Collection" /></Link>
+          <Link to={`/merchandising/collections/Best%20Sellers`} state={{ email: props.email }}><Tab classes={tabStyles} label="Best Sellers" /></Link>
+          <Link to={`/merchandising/collections/Mother`} state={{ email: props.email }}><Tab classes={tabStyles} label="Mother's Day" /></Link>
+          <Link to={`/merchandising/allcollections/index`} state={{ email: props.email }}><Tab classes={tabStyles} label="All Collections" /></Link>
+
         </Tabs>
       </div>
       </div>

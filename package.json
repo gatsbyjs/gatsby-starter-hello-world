@@ -1,7 +1,7 @@
 {
   "name": "tgt-reorder",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A reorder app for The Good Trends customers",
   "version": "1.0.1",
   "license": "The Good Trends",
   "scripts": {
@@ -74,7 +74,7 @@
     "react-typography": "^0.16.19",
     "sass": "^1.32.8",
     "touch": "^3.1.0",
-    "typescript": "^4.2.3",
+    "typescript": "^4.2.4",
     "typography": "^0.16.19",
     "typography-theme-moraga": "^0.16.19",
     "typography-theme-ocean-beach": "^0.16.19",

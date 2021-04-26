@@ -1,4 +1,5 @@
 .content_container{
+  width: 100%;
   padding: 0px 5px 0px 5px;
 }
 
@@ -34,6 +35,13 @@ a, a:hover, a:focus {
     grid-template-columns: repeat(2, 1fr);
 }
 
+.collection__contentGrid {
+    display: grid;
+    grid-gap: 1rem;
+    gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+}
+
 .home__aboutAdditional {
     display: none;
 }
@@ -46,11 +54,18 @@ a, a:hover, a:focus {
     .home__contentGrid {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .collection__contentGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 700px) {
     .home__contentGrid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .collection__contentGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

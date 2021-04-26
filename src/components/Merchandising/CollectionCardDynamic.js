@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import * as bstyles from "./BrandCard.module.css"
+import * as bstyles from "./CollectionCard.module.css"
 
-const BrandCardDynamic = ({ brand, email }) => {
+const CollectionCardDynamic = (props) => {
   
   const toTitleCase = str => {
     return str.replace(/\w\S*/g, function (txt) {
@@ -11,17 +11,17 @@ const BrandCardDynamic = ({ brand, email }) => {
   }
   return (
     <div className={bstyles.productItem}>
-      <Link to={`/brandselection/${brand.brand_id}`} state={{...brand, email}}>
+      <Link to={`/merchandising/collections/${props.collection.collection_name}`} state={{email : props.email}}>
         <div className={bstyles.productItem__imgContainer}>
           <img
-            src={brand.brand_image_url}
-            alt={brand.name}
+            src={props.collection.banner_image}
+            alt={props.collection.collection_name}
             style={{ margin: `0 0 0.25rem 0` }}
           />
         </div>
         <div className={bstyles.brandName__container}>
           <p className={bstyles.productItem__text}>
-            {toTitleCase(brand.brand_name)}
+            {toTitleCase(props.collection.collection_name)}
           </p>
         </div>
       </Link>
@@ -29,4 +29,4 @@ const BrandCardDynamic = ({ brand, email }) => {
   )
 }
 
-export { BrandCardDynamic as default }
+export { CollectionCardDynamic as default }

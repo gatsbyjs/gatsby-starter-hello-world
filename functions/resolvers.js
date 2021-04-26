@@ -5,6 +5,9 @@ const {
   getCustomer,
   brandProducts,
   getBrandProducts,
+  getCustomerOrders,
+  getBrandsFromCollection,
+  getCollections
 } = require("./utils/airtable")
 
 const resolvers = {
@@ -63,6 +66,31 @@ const resolvers = {
             )
             .then(result => result.data);
     },
+    getCustomerOrders: (obj, args, context) => {
+      try {
+        const orderList = getCustomerOrders(args);
+        return orderList
+      } catch (error) {
+        throw new Error(error)
+      } 
+    },
+    getBrandsFromCollection: (obj, args, context) => {
+      try {
+        const brandList = getBrandsFromCollection(args);
+        return brandList
+      } catch (error) {
+        throw new Error(error)
+      } 
+    },
+    getCollections: (obj, args, context) => {
+      try {
+        const collectionList = getCollections(args);
+        return collectionList
+      } catch (error) {
+        throw new Error(error)
+      } 
+    },
+
   },
 }
 

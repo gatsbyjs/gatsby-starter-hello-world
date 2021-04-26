@@ -18,7 +18,10 @@ module.exports = {
   	// Plugins starting with datasources
 	plugins: [{
 		      resolve: `gatsby-plugin-create-client-paths`,
-		      options: { prefixes: [`/brandselection/*`] },
+		      options: { prefixes: [
+		      	`/brandselection/*`,
+		      	`/account/*`,
+		      	`/merchandising/*`] },
 		    },
 		    // Required for data
 			{
@@ -34,6 +37,10 @@ module.exports = {
 		        {
 		          baseId: process.env.GATSBY_AIRTABLE_BASE_CUSTOMER_ID,
 		          tableName: `customers`,
+		        },
+		        {
+		          baseId: process.env.GATSBY_AIRTABLE_BASE_CUSTOMER_ID,
+		          tableName: `orders`,
 		        },
 		        {
 		          baseId: process.env.GATSBY_AIRTABLE_BASE_MERCHANDISING_ID,

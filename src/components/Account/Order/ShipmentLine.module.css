@@ -1,0 +1,146 @@
+.container{
+  align-content: top;
+  width:100%;
+  padding: 0px 5px 0px 5px;
+  border-top: 1px solid #F0F0F0;
+  margin-top: 30px;
+}
+
+.left_div{
+  display: inline-block;
+  width:100%;
+  vertical-align: top;
+  align-content: center;
+  text-align: center;
+}
+
+.middle_div{
+  display: inline-block;
+  width:100%;
+  vertical-align: top;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin-top:20px;
+}
+
+.right_div{
+  display: inline-block;
+  width:100%;
+  vertical-align: top;
+  align-content: center;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media screen and (min-width: 1000px) {
+   .left_div{
+    display: inline-block;
+    width:35%;
+    vertical-align: top;
+    align-content: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .middle_div{
+    display: inline-block;
+    width:25%;
+    text-align: center;
+    vertical-align: center;
+    padding-top: 30px;
+  }
+
+  .right_div{
+    display: inline-block;
+    width:40%;
+    vertical-align: top;
+    text-align: right;
+    padding-top: 30px;
+  }
+
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+   .left_div{
+    display: inline-block;
+    width:35%;
+    vertical-align: top;
+    align-content: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .middle_div{
+    display: inline-block;
+    width:25%;
+    text-align: center;
+    vertical-align: center;
+    padding-top: 30px;
+  }
+
+  .right_div{
+    display: inline-block;
+    width:40%;
+    vertical-align: top;
+    text-align: right;
+    padding-top: 30px;
+  }
+
+
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  max-width:200px;
+  height:60px;
+  min-width: 140px;
+  background-color:#000000;
+  border:1px solid #000000;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:20px;
+  font-weight:bold;
+  padding:5px 10px 5px 10px;
+  text-decoration:none;
+  line-height: 1.1em;
+  margin:20px 20px 20px 20px;
+}
+
+.button:hover {
+  background-color:#ffffff;
+  color:black;
+}
+.button:active {
+  position:relative;
+  top:1px;
+}
+
+.order_open {
+  display:inline-flex;
+  padding: 5px 5px 5px 5px;
+  background-color:#90EE90;
+  font-size:20px;
+  font-weight:bold;
+  margin: 0px 20px 0px 20px;
+  width: 180px;
+  align-content: center;
+  justify-content: center;
+}
+
+.order_closed {
+  display:inline-flex;
+  padding: 5px 5px 5px 5px;
+  background-color:#F5F5F5;
+  font-size:20px;
+  font-weight:bold;
+  margin: 0px 20px 0px 20px;
+  width: 180px;
+  align-content: center;
+  justify-content: center;
+}
